@@ -4,7 +4,9 @@
   "description": "Обучение тестированию в JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "unit": "npx mocha ./tests/unit.test.js",
+    "api": "npx mocha ./tests/api.test.js",
+    "jest": "npx jest ./tests/jest.test.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "@faker-js/faker": "^8.0.1",
     "axios": "^1.4.0",
     "chai": "^4.3.7",
+    "jest": "^29.5.0",
     "mocha": "^10.2.0"
   }
 }
