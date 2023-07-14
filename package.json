@@ -4,9 +4,10 @@
   "description": "Обучение тестированию в JavaScript",
   "main": "index.js",
   "scripts": {
-    "unit": "npx mocha ./tests/unit.test.js",
-    "api": "npx mocha ./tests/api.test.js",
-    "jest": "npx jest ./tests/jest.test.js"
+    "unit": "mocha ./test/unit.test.js",
+    "api": "mocha ./test/api.test.js",
+    "jest": "jest ./test/jest.test.js",
+    "esm": "mocha ./test/esm.test.mjs"
   },
   "author": "",
   "license": "ISC",
