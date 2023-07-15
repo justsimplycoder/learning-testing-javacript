@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './styles/style.scss';
 import listTest from './helpers/listTest.js';
 
-import 'highlight.js/scss/atom-one-dark.scss';
+import 'highlight.js/scss/base16/mexico-light.scss';
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('javascript', javascript);

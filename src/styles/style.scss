@@ -41,6 +41,7 @@ a:hover {
 		overflow-x: auto;
 		position: fixed;
 		width: 310px;
+		background-color: #fdf6e3;
 	}
 	&__content {
 		grid-area: content;
@@ -51,7 +52,7 @@ a:hover {
 /* Модуль header */
 .header {
 	padding: 0 15px;
-	background-color: #FFF;
+	background-color: #d7d7d7;
 	box-shadow: 0 0 2.25rem #9da5ab;
 	height: 64px;
 	display: flex;
@@ -59,5 +60,7 @@ a:hover {
 	width: 100%;
 	&__title {
 		line-height: 1em;
+		font-size: 1.8em;
+		font-weight: normal;
 	}
 }
