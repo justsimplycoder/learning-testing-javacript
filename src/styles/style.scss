@@ -1,0 +1,63 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	height: 100vh;
+}
+
+a {
+	color: #3492ff;
+}
+
+a:hover {
+	color: #0071B5;
+}
+
+/* Модули */
+/* Модуль page */
+.page {
+	display: grid;
+	grid-template-columns: 310px 1fr;
+	grid-template-rows: 64px 1fr;
+	grid-template-areas: "header header"
+											 "sidebar content";
+	height: 100vh;
+	&__header {
+		position: fixed;
+		z-index: 1;
+		grid-area: header;
+	}
+	&__toc {
+		grid-area: sidebar;
+		padding: 28px 15px;
+		border-right: 1px solid #ccc;
+		--top-margin: 64px;
+		height: calc(100vh - var(--top-margin));
+		margin-top: var(--top-margin);
+		overflow-x: auto;
+		position: fixed;
+		width: 310px;
+	}
+	&__content {
+		grid-area: content;
+		padding-top: 15px;
+		padding-bottom: 30px;
+	}
+}
+/* Модуль header */
+.header {
+	padding: 0 15px;
+	background-color: #FFF;
+	box-shadow: 0 0 2.25rem #9da5ab;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	&__title {
+		line-height: 1em;
+	}
+}

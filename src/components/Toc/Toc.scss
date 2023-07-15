@@ -1,0 +1,11 @@
+.toc {
+	padding-top: .5em;
+	padding-left: 0;
+	&__item {
+		list-style: none;
+		padding-bottom: .2rem;
+	}
+	&__link {
+		text-decoration: none;
+	}
+}
