@@ -8,22 +8,22 @@ function Content(props) {
 			{props.category.content.map(item => {
 				return (
 					<section key={item.key}>
-						<h3><a id={'fn-' + item.name}></a>{'_.' + item.name}</h3>
+						<h3><a id={'fn-' + item.name}></a>{item.name}</h3>
 						<p>{item.description}</p>
 
-						<h4>Lodash</h4>
+						<h4>Chai expect</h4>
 						<pre><code className="language-js">
-							{item.lodash ? item.lodash : `\nНет реализации.\n\n`}
+							{item.expectChai ? item.expectChai : `\nНет реализации.\n\n`}
 						</code></pre>
 
-						<h4>Underscore</h4>
+						<h4>Chai assert</h4>
 						<pre><code className="language-js">
-							{item.underscore ? item.underscore : `\nНет реализации.\n\n`}
+							{item.assertChai ? item.assertChai : `\nНет реализации.\n\n`}
 						</code></pre>
 
-						<h4>Vanilla JavaScript</h4>
+						<h4>Jest</h4>
 						<pre><code className="language-js">
-							{item.vanillaJavaScript}
+							{item.jest}
 						</code></pre>
 					</section>
 				);

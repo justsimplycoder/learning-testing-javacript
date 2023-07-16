@@ -7,7 +7,8 @@
     "server": "webpack serve --open --config=webpack.development.js",
     "dev": "webpack --config=webpack.development.js",
     "build": "webpack --config=webpack.production.js",
-    "test:unit": "mocha ./test/unit.test.js",
+    "test:chai-assert": "mocha ./test/chai-assert.test.js",
+    "test:chai-expect": "mocha ./test/chai-expect.test.js",
     "test:api": "mocha ./test/api.test.js",
     "test:jest": "jest ./test/jest.test.js",
     "test:esm": "mocha ./test/esm.test.mjs"

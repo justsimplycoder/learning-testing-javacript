@@ -34,7 +34,7 @@ function Toc(props) {
 				{props.category.content.map(item => {
 					return (
 						<li className="toc__item" key={item.key}>
-							<a className="toc__link" href={'#' + item.name} onClick={(e) => {handleMoveFunction(item.name, e)}}>{'_.' + item.name}</a>
+							<a className="toc__link" href={'#' + item.name} onClick={(e) => {handleMoveFunction(item.name, e)}}>{item.name}</a>
 						</li>
 					);
 				})}
