@@ -7,5 +7,10 @@ describe('Тесты Chai стиль assert', () => {
 				assert.strictEqual(1 + 2, 3);
 			});
 		});
+		describe('x == y', () => {
+			it('1 + 2 = 3', () => {
+				assert.equal(1 + 2, '3');
+			});
+		});
 	});
 });

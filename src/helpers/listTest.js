@@ -26,6 +26,22 @@ test('1 + 2 = 3', () => {
     },
     {
       "key": "0:1",
+      "name": "x == y",
+      "description": "Нестрогое сравнение примитивных значений",
+      "expectChai": `
+it('1 + 2 = 3', () => {
+  expect(1 + 2).to.satisfy((num) => num == 3);
+});
+      `,
+      "assertChai": `
+it('1 + 2 = 3', () => {
+  assert.equal(1 + 2, '3');
+});
+      `,
+      "jest": undefined
+    },
+    {
+      "key": "0:1",
       "name": "name",
       "description": "",
       "expectChai": `

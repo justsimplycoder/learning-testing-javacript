@@ -23,7 +23,7 @@ function Content(props) {
 
 						<h4>Jest</h4>
 						<pre><code className="language-js">
-							{item.jest}
+							{item.jest ? item.jest : `\nНет реализации.\n\n`}
 						</code></pre>
 					</section>
 				);
