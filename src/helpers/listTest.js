@@ -56,6 +56,48 @@ it('1 + 2 = 3', () => {
     },
   ]
 },
+{
+  "key": 1,
+  "title": "Проверка типов",
+  "visible": true,
+  "content": [
+    {
+      "key": "1:0",
+      "name": "type string",
+      "description": "Тип 'string'",
+      "expectChai": `
+it('type string', () => {
+  expect('text').to.be.a('string');
+});
+      `,
+      "assertChai": `
+it('type string', () => {
+  assert.typeOf('text', 'string');
+});
+      `,
+      "jest": `
+test('type string', () => {
+  expect(typeof 'text').toBe('string');
+  expect('text').toEqual(expect.any(String));
+});
+      `
+    },
+    {
+      "key": "1:1",
+      "name": "name",
+      "description": "",
+      "expectChai": `
+
+      `,
+      "assertChai": `
+
+      `,
+      "jest": `
+
+      `
+    },
+  ]
+},
 ];
 
 export default listTest;
