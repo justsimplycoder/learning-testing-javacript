@@ -21,5 +21,9 @@ describe('Тесты Jest', () => {
 			expect(Infinity).toEqual(expect.any(Number));
 			expect(NaN).toEqual(expect.any(Number));
 		});
+		test('type boolean', () => {
+			expect(typeof true).toBe('boolean');
+			expect(true).toEqual(expect.any(Boolean));
+		});
 	});
 });

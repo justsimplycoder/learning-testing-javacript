@@ -110,6 +110,27 @@ test('type number', () => {
       `
     },
     {
+      "key": "1:3",
+      "name": "type boolean",
+      "description": "Тип 'boolean'",
+      "expectChai": `
+it('type boolean', () => {
+  expect(true).to.be.a('boolean');
+});
+      `,
+      "assertChai": `
+it('type boolean', () => {
+  assert.isBoolean(true);
+});
+      `,
+      "jest": `
+test('type boolean', () => {
+  expect(typeof true).toBe('boolean');
+  expect(true).toEqual(expect.any(Boolean));
+});
+      `
+    },
+       {
       "key": "1:2",
       "name": "name",
       "description": "",

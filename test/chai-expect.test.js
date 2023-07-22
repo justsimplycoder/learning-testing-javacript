@@ -18,5 +18,8 @@ describe('Тесты Chai стиль expect', () => {
 			expect(Infinity).to.be.a('number');
 			expect(NaN).to.be.a('number');
 		});
+		it('type boolean', () => {
+			expect(true).to.be.a('boolean');
+		});
 	});
 });

@@ -136,16 +136,12 @@ describe('Тесты', () => {
 	// Утверждает, что цель строго (===) равна true.
 	it('.true, .isTrue', () => {
 		expect(true).to.be.true;
-		assert.isTrue(true);
 		expect(false).to.not.be.true;
-		assert.isNotTrue(false);
 	});
 	// Утверждает, что цель строго (===) равна false.
 	it('.false, .isFalse', () => {
 		expect(false).to.be.false;
-		assert.isFalse(false);
 		expect(true).to.not.be.false;
-		assert.isNotFalse(true);
 	});
 	// Утверждает, что цель строго (===) равна null.
 	it('.null, .isNull', () => {
@@ -240,10 +236,6 @@ describe('Тесты', () => {
 	// Утверждает, что значение не является числом.
 	it('isNotNumber', () => {
 		assert.isNotNumber('text');
-	});
-	// Утверждает, что значение является логическим.
-	it('isBoolean', () => {
-		assert.isBoolean(true);
 	});
 	// Утверждает, что значение не является логическим.
 	it('isNotBoolean', () => {

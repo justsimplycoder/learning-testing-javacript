@@ -19,5 +19,8 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isNumber(NaN);
 			assert.isNumber(Infinity);
 		});
+		it('type boolean', () => {
+			assert.isBoolean(true);
+		});
 	});
 });
