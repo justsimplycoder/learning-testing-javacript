@@ -67,8 +67,6 @@ describe('Тесты', () => {
 		assert.typeOf({a: 1}, 'object');
 		expect([1, 2, 3]).to.be.a('array');
 		assert.typeOf([1, 2, 3], 'array');
-		expect(null).to.be.a('null');
-		assert.typeOf(null, 'null');
 		expect(undefined).to.be.an('undefined');
 		assert.typeOf(undefined, 'undefined');
 		expect(new Error).to.be.an('error');
@@ -142,13 +140,6 @@ describe('Тесты', () => {
 	it('.false, .isFalse', () => {
 		expect(false).to.be.false;
 		expect(true).to.not.be.false;
-	});
-	// Утверждает, что цель строго (===) равна null.
-	it('.null, .isNull', () => {
-		expect(null).to.be.null;
-		assert.isNull(null);
-		expect(true).to.not.null;
-		assert.isNotNull(true);
 	});
 	// Утверждает, что цель строго (===) равна undefined.
 	it('.undefined, isUndefined', () => {

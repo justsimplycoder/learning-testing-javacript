@@ -21,5 +21,9 @@ describe('Тесты Chai стиль expect', () => {
 		it('type boolean', () => {
 			expect(true).to.be.a('boolean');
 		});
+		it('type null', () => {
+			expect(null).to.be.a('null');
+			expect(null).to.be.null;
+		});
 	});
 });

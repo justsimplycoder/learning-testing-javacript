@@ -20,7 +20,12 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isNumber(Infinity);
 		});
 		it('type boolean', () => {
+			assert.typeOf(true, 'boolean');
 			assert.isBoolean(true);
 		});
+		it('type null', () => {
+			assert.typeOf(null, 'null');
+			assert.isNull(null);
+		})
 	});
 });

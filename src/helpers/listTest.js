@@ -110,7 +110,7 @@ test('type number', () => {
       `
     },
     {
-      "key": "1:3",
+      "key": "1:2",
       "name": "type boolean",
       "description": "Тип 'boolean'",
       "expectChai": `
@@ -120,6 +120,7 @@ it('type boolean', () => {
       `,
       "assertChai": `
 it('type boolean', () => {
+  assert.typeOf(true, 'boolean');
   assert.isBoolean(true);
 });
       `,
@@ -130,7 +131,29 @@ test('type boolean', () => {
 });
       `
     },
-       {
+    {
+      "key": "1:3",
+      "name": "type null",
+      "description": "Тип 'null'",
+      "expectChai": `
+it('type null', () => {
+  expect(null).to.be.a('null');
+  expect(null).to.be.null;
+});
+      `,
+      "assertChai": `
+it('type null', () => {
+  assert.typeOf(null, 'null');
+  assert.isNull(null);
+})
+      `,
+      "jest": `
+test('type null', () => {
+  expect(null).toBeNull();
+});
+      `
+    },
+    {
       "key": "1:2",
       "name": "name",
       "description": "",

@@ -25,5 +25,8 @@ describe('Тесты Jest', () => {
 			expect(typeof true).toBe('boolean');
 			expect(true).toEqual(expect.any(Boolean));
 		});
+		test('type null', () => {
+			expect(null).toBeNull();
+		});
 	});
 });
