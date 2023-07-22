@@ -73,6 +73,7 @@ it('type string', () => {
       "assertChai": `
 it('type string', () => {
   assert.typeOf('text', 'string');
+  assert.isString('text');
 });
       `,
       "jest": `

@@ -12,6 +12,7 @@ describe('Тесты Chai стиль assert', () => {
 	describe('Проверка типов', () => {
 		it('type string', () => {
 			assert.typeOf('text', 'string');
+			assert.isString('text');
 		});
 		it('type number', () => {
 			assert.typeOf(3.14, 'number');
