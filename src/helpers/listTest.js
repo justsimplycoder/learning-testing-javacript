@@ -84,6 +84,32 @@ test('type string', () => {
     },
     {
       "key": "1:1",
+      "name": "type number",
+      "description": "Тип 'number'",
+      "expectChai": `
+it('type number', () => {
+  expect(3.14).to.be.a('number');
+  expect(Infinity).to.be.a('number');
+  expect(NaN).to.be.a('number');
+});
+      `,
+      "assertChai": `
+it('type number', () => {
+  assert.typeOf(3.14, 'number');
+  assert.isNumber(NaN);
+  assert.isNumber(Infinity);
+});
+      `,
+      "jest": `
+test('type number', () => {
+  expect(typeof 3.14).toBe('number');
+  expect(Infinity).toEqual(expect.any(Number));
+  expect(NaN).toEqual(expect.any(Number));
+});
+      `
+    },
+    {
+      "key": "1:2",
       "name": "name",
       "description": "",
       "expectChai": `

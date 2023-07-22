@@ -62,8 +62,6 @@ describe('Тесты', () => {
 	});
 	// Утверждает, что целевой тип равен заданному строковому типу. Типы нечувствительны к регистру.
 	it('.a, typeOf', () => {
-
-
 		expect({a: 1}).to.be.an('object');
 		expect({a: 1}).to.be.a('object');
 		assert.typeOf({a: 1}, 'object');
@@ -235,19 +233,9 @@ describe('Тесты', () => {
 	it('isNotArray', () => {
 		assert.isNotArray({a: 1});
 	});
-	// Утверждает, что значение является строкой.
-	it('isString', () => {
-		assert.isString('text');
-	});
 	// Утверждает, что значение не является строкой.
 	it('isNotString', () => {
 		assert.isNotString(1);
-	});
-	// Утверждает, что значение является числом.
-	it('isNumber', () => {
-		assert.isNumber(1);
-		assert.isNumber(NaN);
-		assert.isNumber(Infinity);
 	});
 	// Утверждает, что значение не является числом.
 	it('isNotNumber', () => {

@@ -13,5 +13,10 @@ describe('Тесты Chai стиль assert', () => {
 		it('type string', () => {
 			assert.typeOf('text', 'string');
 		});
+		it('type number', () => {
+			assert.typeOf(3.14, 'number');
+			assert.isNumber(NaN);
+			assert.isNumber(Infinity);
+		});
 	});
 });

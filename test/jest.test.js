@@ -16,5 +16,10 @@ describe('Тесты Jest', () => {
 			expect(typeof 'text').toBe('string');
 			expect('text').toEqual(expect.any(String));
 		});
+		test('type number', () => {
+			expect(typeof 3.14).toBe('number');
+			expect(Infinity).toEqual(expect.any(Number));
+			expect(NaN).toEqual(expect.any(Number));
+		});
 	});
 });
