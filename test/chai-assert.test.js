@@ -26,6 +26,10 @@ describe('Тесты Chai стиль assert', () => {
 		it('type null', () => {
 			assert.typeOf(null, 'null');
 			assert.isNull(null);
-		})
+		});
+		it('type array', () => {
+			assert.typeOf([1, 2, 3], 'array');
+			assert.isArray([1, 2, 3]);
+		});
 	});
 });

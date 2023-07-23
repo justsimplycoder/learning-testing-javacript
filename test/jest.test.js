@@ -28,5 +28,10 @@ describe('Тесты Jest', () => {
 		test('type null', () => {
 			expect(null).toBeNull();
 		});
+		test('type array', () => {
+			expect(Array.isArray([1, 2, 3])).toBe(true);
+			expect([1, 2, 3]).toEqual(expect.any(Array));
+			expect([1, 2, 3]).toBeInstanceOf(Array);
+		});
 	});
 });

@@ -145,11 +145,34 @@ it('type null', () => {
 it('type null', () => {
   assert.typeOf(null, 'null');
   assert.isNull(null);
-})
+});
       `,
       "jest": `
 test('type null', () => {
   expect(null).toBeNull();
+});
+      `
+    },
+    {
+      "key": "1:4",
+      "name": "type array",
+      "description": "Тип 'array'",
+      "expectChai": `
+it('type array', () => {
+  expect([1, 2, 3]).to.be.an('array');
+});
+      `,
+      "assertChai": `
+it('type array', () => {
+  assert.typeOf([1, 2, 3], 'array');
+  assert.isArray([1, 2, 3]);
+});
+      `,
+      "jest": `
+test('type array', () => {
+  expect(Array.isArray([1, 2, 3])).toBe(true);
+  expect([1, 2, 3]).toEqual(expect.any(Array));
+  expect([1, 2, 3]).toBeInstanceOf(Array);
 });
       `
     },
