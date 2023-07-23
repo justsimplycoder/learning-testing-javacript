@@ -176,7 +176,7 @@ test('type array', () => {
 });
       `
     },
-   {
+    {
       "key": "1:5",
       "name": "type object",
       "description": "Тип object",
@@ -195,6 +195,29 @@ it('type object', () => {
 test('type object', () => {
   expect(typeof {a: 1}).toBe('object');
   expect({a: 1}).toEqual(expect.any(Object));
+});
+      `
+    },
+    {
+      "key": "1:6",
+      "name": "type undefined",
+      "description": "Тип undefined",
+      "expectChai": `
+it('type undefined', () => {
+  expect(undefined).to.be.an('undefined');
+  expect(undefined).to.be.undefined;
+});
+      `,
+      "assertChai": `
+it('type undefined', () => {
+  assert.typeOf(undefined, 'undefined');
+  assert.isUndefined(undefined);
+});
+      `,
+      "jest": `
+test('type undefined', () => {
+  expect(typeof undefined).toBe('undefined');
+  expect(undefined).toBeUndefined();
 });
       `
     },

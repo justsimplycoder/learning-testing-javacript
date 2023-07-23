@@ -37,5 +37,9 @@ describe('Тесты Jest', () => {
 			expect(typeof {a: 1}).toBe('object');
 			expect({a: 1}).toEqual(expect.any(Object));
 		});
+		test('type undefined', () => {
+			expect(typeof undefined).toBe('undefined');
+			expect(undefined).toBeUndefined();
+		});
 	});
 });

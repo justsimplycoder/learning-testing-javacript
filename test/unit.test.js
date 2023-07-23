@@ -62,8 +62,8 @@ describe('Тесты', () => {
 	});
 	// Утверждает, что целевой тип равен заданному строковому типу. Типы нечувствительны к регистру.
 	it('.a, typeOf', () => {
-		expect(undefined).to.be.an('undefined');
-		assert.typeOf(undefined, 'undefined');
+
+
 		expect(new Error).to.be.an('error');
 		assert.typeOf(new Error, 'error');
 		expect(Promise.resolve()).to.be.a('promise');
@@ -136,11 +136,6 @@ describe('Тесты', () => {
 		expect(false).to.be.false;
 		expect(true).to.not.be.false;
 	});
-	// Утверждает, что цель строго (===) равна undefined.
-	it('.undefined, isUndefined', () => {
-		expect(undefined).to.be.undefined;
-		assert.isUndefined(undefined);
-	});
 	// Утверждает, что цель строго (!==) не равна undefined.
 	it('isDefined', () => {
 		expect(true).to.not.be.undefined;
@@ -198,34 +193,6 @@ describe('Тесты', () => {
 		(function () {
 			expect(arguments).to.be.arguments;
 		})();
-	});
-	// Утверждает, что значение является объектом типа «Объект» (как показывает Object.prototype.toString). Утверждение не соответствует объектам подкласса.
-	it('.isObject', () => {
-		assert.isObject({a: 1});
-	});
-	// Утверждает, что значение не является объектом типа «Объект» (как показывает Object.prototype.toString).
-	it('.isNotObject', () => {
-		assert.isNotObject([1, 2, 3]);
-	});
-	// Утверждает, что значение является массивом.
-	it('isArray', () => {
-		assert.isArray([1, 2, 3]);
-	});
-	// Утверждает, что значение не является массивом.
-	it('isNotArray', () => {
-		assert.isNotArray({a: 1});
-	});
-	// Утверждает, что значение не является строкой.
-	it('isNotString', () => {
-		assert.isNotString(1);
-	});
-	// Утверждает, что значение не является числом.
-	it('isNotNumber', () => {
-		assert.isNotNumber('text');
-	});
-	// Утверждает, что значение не является логическим.
-	it('isNotBoolean', () => {
-		assert.isNotBoolean(1);
 	});
 	// Утверждает, что цель строго (===) равна заданному значению.
 	it('.equal, .strictEqual, .deepEqual', () => {1

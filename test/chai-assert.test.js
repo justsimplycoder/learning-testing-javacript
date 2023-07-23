@@ -35,5 +35,9 @@ describe('Тесты Chai стиль assert', () => {
 			assert.typeOf({a: 1}, 'object');
 			assert.isObject({a: 1});
 		});
+		it('type undefined', () => {
+			assert.typeOf(undefined, 'undefined');
+			assert.isUndefined(undefined);
+		});
 	});
 });
