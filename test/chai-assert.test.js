@@ -31,5 +31,9 @@ describe('Тесты Chai стиль assert', () => {
 			assert.typeOf([1, 2, 3], 'array');
 			assert.isArray([1, 2, 3]);
 		});
+		it('type object', () => {
+			assert.typeOf({a: 1}, 'object');
+			assert.isObject({a: 1});
+		});
 	});
 });

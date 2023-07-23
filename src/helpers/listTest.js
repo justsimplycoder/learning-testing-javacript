@@ -176,6 +176,28 @@ test('type array', () => {
 });
       `
     },
+   {
+      "key": "1:5",
+      "name": "type object",
+      "description": "Тип object",
+      "expectChai": `
+it('type object', () => {
+  expect({a: 1}).to.be.an('object');
+});
+      `,
+      "assertChai": `
+it('type object', () => {
+  assert.typeOf({a: 1}, 'object');
+  assert.isObject({a: 1});
+});
+      `,
+      "jest": `
+test('type object', () => {
+  expect(typeof {a: 1}).toBe('object');
+  expect({a: 1}).toEqual(expect.any(Object));
+});
+      `
+    },
     {
       "key": "1:2",
       "name": "name",

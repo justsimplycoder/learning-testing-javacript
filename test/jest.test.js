@@ -33,5 +33,9 @@ describe('Тесты Jest', () => {
 			expect([1, 2, 3]).toEqual(expect.any(Array));
 			expect([1, 2, 3]).toBeInstanceOf(Array);
 		});
+		test('type object', () => {
+			expect(typeof {a: 1}).toBe('object');
+			expect({a: 1}).toEqual(expect.any(Object));
+		});
 	});
 });

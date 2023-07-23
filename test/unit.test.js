@@ -62,9 +62,6 @@ describe('Тесты', () => {
 	});
 	// Утверждает, что целевой тип равен заданному строковому типу. Типы нечувствительны к регистру.
 	it('.a, typeOf', () => {
-		expect({a: 1}).to.be.an('object');
-		expect({a: 1}).to.be.a('object');
-		assert.typeOf({a: 1}, 'object');
 		expect(undefined).to.be.an('undefined');
 		assert.typeOf(undefined, 'undefined');
 		expect(new Error).to.be.an('error');

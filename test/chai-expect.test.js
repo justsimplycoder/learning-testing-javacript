@@ -28,5 +28,8 @@ describe('Тесты Chai стиль expect', () => {
 		it('type array', () => {
 			expect([1, 2, 3]).to.be.an('array');
 		});
+		it('type object', () => {
+			expect({a: 1}).to.be.an('object');
+		});
 	});
 });
