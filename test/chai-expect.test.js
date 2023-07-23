@@ -7,6 +7,7 @@ describe('Тесты Chai стиль expect', () => {
 		});
 		it('x == y', () => {
 			expect(1 + 2).to.satisfy((num) => num == 3);
+			expect(1 + 2 == '3').to.be.true;
 		});
 	});
 	describe('Проверка типов', () => {

@@ -31,6 +31,7 @@ test('1 + 2 = 3', () => {
       "expectChai": `
 it('1 + 2 = 3', () => {
   expect(1 + 2).to.satisfy((num) => num == 3);
+  expect(1 + 2 == '3').to.be.true;
 });
       `,
       "assertChai": `
@@ -38,7 +39,11 @@ it('1 + 2 = 3', () => {
   assert.equal(1 + 2, '3');
 });
       `,
-      "jest": undefined
+      "jest": `
+test('x == y', () => {
+  expect(1 + 2 == '3').toBe(true);
+});
+      `
     },
     {
       "key": "0:1",

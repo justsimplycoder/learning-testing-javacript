@@ -8,7 +8,7 @@ describe('Тесты Jest', () => {
 			expect(1 + 2).toStrictEqual(3);
 		});
 		test('x == y', () => {
-			// Нет реализации
+			expect(1 + 2 == '3').toBe(true);
 		});
 	});
 	describe('Проверка типов', () => {
