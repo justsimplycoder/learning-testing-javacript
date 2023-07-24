@@ -227,6 +227,31 @@ test('type undefined', () => {
       `
     },
     {
+      "key": "1:7",
+      "name": "type function",
+      "description": "Тип function",
+      "expectChai": `
+it('type function', () => {
+  const f = () => {};
+  expect(f).to.be.a('function');
+});
+      `,
+      "assertChai": `
+it('type function', () => {
+  const f = () => {};
+  assert.typeOf(f, 'function');
+  assert.isFunction(f);
+});
+      `,
+      "jest": `
+test('type function', () => {
+  const f = () => {}
+  expect(typeof f).toBe('function');
+  expect(f).toEqual(expect.any(Function));
+});
+      `
+    },
+    {
       "key": "1:2",
       "name": "name",
       "description": "",

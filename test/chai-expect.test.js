@@ -36,5 +36,9 @@ describe('Тесты Chai стиль expect', () => {
 			expect(undefined).to.be.an('undefined');
 			expect(undefined).to.be.undefined;
 		});
+		it('type function', () => {
+			const f = () => {};
+			expect(f).to.be.a('function');
+		});
 	});
 });

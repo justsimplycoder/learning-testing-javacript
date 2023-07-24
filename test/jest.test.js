@@ -41,5 +41,10 @@ describe('Тесты Jest', () => {
 			expect(typeof undefined).toBe('undefined');
 			expect(undefined).toBeUndefined();
 		});
+		test('type function', () => {
+			const f = () => {}
+			expect(typeof f).toBe('function');
+			expect(f).toEqual(expect.any(Function));
+		});
 	});
 });

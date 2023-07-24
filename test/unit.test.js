@@ -176,18 +176,6 @@ describe('Тесты', () => {
 		assert.isArray([]);
 		assert.isEmpty([]);
 	});
-	// Утверждает, что значение является функцией.
-	it('isFunction', () => {
-		assert.isFunction(() => {});
-		assert.isFunction(function() {});
-		class O {};
-		assert.isFunction(O);
-		assert.isFunction(function* (){});
-	});
-	// Утверждает, что значение не является функцией.
-	it('isNotFunction', () => {
-		assert.isNotFunction([1, 2, 3]);
-	});
 	// Утверждает, что целью является объект arguments.
 	it('.arguments', () => {
 		(function () {

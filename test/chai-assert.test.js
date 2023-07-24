@@ -39,5 +39,10 @@ describe('Тесты Chai стиль assert', () => {
 			assert.typeOf(undefined, 'undefined');
 			assert.isUndefined(undefined);
 		});
+		it('type function', () => {
+			const f = () => {};
+			assert.typeOf(f, 'function');
+			assert.isFunction(f);
+		});
 	});
 });
