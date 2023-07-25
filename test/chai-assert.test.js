@@ -14,6 +14,13 @@ describe('Тесты Chai стиль assert', () => {
 		it('x === false', () => {
 			assert.isFalse(false);
 		});
+		// false, 0, '', null, undefined и NaN - ложные значения
+		it('x == true', () => {
+			assert.isOk(true);
+			assert.isOk(1);
+			assert.isOk('text');
+			assert.isOk([]);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

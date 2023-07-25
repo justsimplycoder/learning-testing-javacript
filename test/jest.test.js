@@ -16,6 +16,13 @@ describe('Тесты Jest', () => {
 		test('x === false', () => {
 			expect(false).toBe(false);
 		});
+		// false, 0, '', null, undefined и NaN - ложные значения
+		test('x == true', () => {
+			expect(true).toBeTruthy();
+			expect(1).toBeTruthy();
+			expect(true).toBeTruthy();
+			expect([]).toBeTruthy();
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

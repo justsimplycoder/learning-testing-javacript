@@ -15,6 +15,13 @@ describe('Тесты Chai стиль expect', () => {
 		it('x === false', () => {
 			expect(false).to.be.false;
 		});
+		// false, 0, '', null, undefined и NaN - ложные значения
+		it('x == true', () => {
+			expect(true).to.be.ok;
+			expect(1).to.be.ok;
+			expect('text').to.be.ok;
+			expect([]).to.be.ok;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

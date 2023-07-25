@@ -65,7 +65,7 @@ test('x === true', () => {
 });
       `
     },
-     {
+    {
       "key": "0:3",
       "name": "x === false",
       "description": "Строгое сравнение на ложность",
@@ -82,6 +82,35 @@ it('x === false', () => {
       "jest": `
 test('x === false', () => {
   expect(false).toBe(false);
+});
+      `
+    },
+    {
+      "key": "0:4",
+      "name": "x == true",
+      "description": "Нестрогое сравнение на истинность. Всё кроме false, 0, '', null, undefined и NaN даёт true.",
+      "expectChai": `
+it('x == true', () => {
+  expect(true).to.be.ok;
+  expect(1).to.be.ok;
+  expect('text').to.be.ok;
+  expect([]).to.be.ok;
+});
+      `,
+      "assertChai": `
+it('x == true', () => {
+  assert.isOk(true);
+  assert.isOk(1);
+  assert.isOk('text');
+  assert.isOk([]);
+});
+      `,
+      "jest": `
+test('x == true', () => {
+  expect(true).toBeTruthy();
+  expect(1).toBeTruthy();
+  expect(true).toBeTruthy();
+  expect([]).toBeTruthy();
 });
       `
     },

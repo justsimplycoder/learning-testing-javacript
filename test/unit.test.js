@@ -111,24 +111,6 @@ describe('Тесты', () => {
 		assert.notDeepInclude({foo: obj1, bar: obj2}, {foo: {a: 9}});
 		assert.notDeepInclude({foo: obj1, bar: obj2}, {foo: {a: 1}, bar: {b: 9}});
 	});
-	// Утверждает, что цель является истинным значением (считается истинным в логическом контексте). Однако часто лучше утверждать, что цель строго (===) или полностью равна ожидаемому значению.
-	it('.ok, .isOk, isNotOk', () => {
-		expect(1).to.be.ok;
-		assert.isOk(1);
-		expect('sdf').to.be.ok;
-		assert.isOk('sdf');
-		expect({}).to.be.ok;
-		assert.isOk({});
-		expect(0).to.not.be.ok;
-		assert.isNotOk(0);
-		expect(null).to.not.be.ok;
-		assert.isNotOk(null);
-	});
-	// Утверждает, что цель строго (===) равна false.
-	it('.false, .isFalse', () => {
-		expect(false).to.be.false;
-		expect(true).to.not.be.false;
-	});
 	// Утверждает, что цель строго (!==) не равна undefined.
 	it('isDefined', () => {
 		expect(true).to.not.be.undefined;
