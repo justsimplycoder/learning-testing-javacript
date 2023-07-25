@@ -9,6 +9,9 @@ describe('Тесты Chai стиль expect', () => {
 			expect(1 + 2).to.satisfy((num) => num == 3);
 			expect(1 + 2 == '3').to.be.true;
 		});
+		it('x === true', () => {
+			expect(true).to.be.true;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

@@ -62,8 +62,6 @@ describe('Тесты', () => {
 	});
 	// Утверждает, что целевой тип равен заданному строковому типу. Типы нечувствительны к регистру.
 	it('.a, typeOf', () => {
-
-
 		expect(new Error).to.be.an('error');
 		assert.typeOf(new Error, 'error');
 		expect(Promise.resolve()).to.be.a('promise');
@@ -125,11 +123,6 @@ describe('Тесты', () => {
 		assert.isNotOk(0);
 		expect(null).to.not.be.ok;
 		assert.isNotOk(null);
-	});
-	// Утверждает, что цель строго (===) равна true.
-	it('.true, .isTrue', () => {
-		expect(true).to.be.true;
-		expect(false).to.not.be.true;
 	});
 	// Утверждает, что цель строго (===) равна false.
 	it('.false, .isFalse', () => {

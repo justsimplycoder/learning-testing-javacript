@@ -8,6 +8,9 @@ describe('Тесты Chai стиль assert', () => {
 		it('x == y', () => {
 			assert.equal(1 + 2, '3');
 		});
+		it('x === true', () => {
+			assert.isTrue(true);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

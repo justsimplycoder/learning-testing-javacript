@@ -10,6 +10,9 @@ describe('Тесты Jest', () => {
 		test('x == y', () => {
 			expect(1 + 2 == '3').toBe(true);
 		});
+		test('x === true', () => {
+			expect(true).toBe(true);
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {
