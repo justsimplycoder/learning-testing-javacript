@@ -21,6 +21,14 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isOk('text');
 			assert.isOk([]);
 		});
+		it('x == false', () => {
+			assert.isNotOk(false);
+			assert.isNotOk(0);
+			assert.isNotOk('');
+			assert.isNotOk(null);
+			assert.isNotOk(undefined);
+			assert.isNotOk(NaN);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

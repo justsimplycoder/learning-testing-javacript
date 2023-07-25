@@ -22,6 +22,14 @@ describe('Тесты Chai стиль expect', () => {
 			expect('text').to.be.ok;
 			expect([]).to.be.ok;
 		});
+		it('x == false', () => {
+			expect(false).to.be.not.ok;
+			expect(0).to.be.not.ok;
+			expect('').to.be.not.ok;
+			expect(null).to.be.not.ok;
+			expect(undefined).to.be.not.ok;
+			expect(NaN).to.be.not.ok;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

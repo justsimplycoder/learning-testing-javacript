@@ -115,6 +115,41 @@ test('x == true', () => {
       `
     },
     {
+      "key": "0:5",
+      "name": "x == false",
+      "description": "Нестрогое сравнение на ложность. Значения false, 0, '', null, undefined и NaN дают false.",
+      "expectChai": `
+it('x == false', () => {
+  expect(false).to.be.not.ok;
+  expect(0).to.be.not.ok;
+  expect('').to.be.not.ok;
+  expect(null).to.be.not.ok;
+  expect(undefined).to.be.not.ok;
+  expect(NaN).to.be.not.ok;
+});
+      `,
+      "assertChai": `
+it('x == false', () => {
+  assert.isNotOk(false);
+  assert.isNotOk(0);
+  assert.isNotOk('');
+  assert.isNotOk(null);
+  assert.isNotOk(undefined);
+  assert.isNotOk(NaN);
+});
+      `,
+      "jest": `
+test('x == false', () => {
+  expect(false).toBeFalsy();
+  expect(0).toBeFalsy();
+  expect('').toBeFalsy();
+  expect(null).toBeFalsy();
+  expect(undefined).toBeFalsy();
+  expect(NaN).toBeFalsy();
+});
+      `
+    },
+    {
       "key": "0:1",
       "name": "name",
       "description": "",

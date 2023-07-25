@@ -23,6 +23,14 @@ describe('Тесты Jest', () => {
 			expect(true).toBeTruthy();
 			expect([]).toBeTruthy();
 		});
+		test('x == false', () => {
+			expect(false).toBeFalsy();
+			expect(0).toBeFalsy();
+			expect('').toBeFalsy();
+			expect(null).toBeFalsy();
+			expect(undefined).toBeFalsy();
+			expect(NaN).toBeFalsy();
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {
