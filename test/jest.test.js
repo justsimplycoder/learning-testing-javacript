@@ -13,6 +13,9 @@ describe('Тесты Jest', () => {
 		test('x === true', () => {
 			expect(true).toBe(true);
 		});
+		test('x === false', () => {
+			expect(false).toBe(false);
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

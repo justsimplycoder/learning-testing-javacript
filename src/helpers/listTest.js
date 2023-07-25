@@ -48,7 +48,7 @@ test('x == y', () => {
     {
       "key": "0:2",
       "name": "x === true",
-      "description": "Проверка на истинность",
+      "description": "Строгое сравнение на истинность",
       "expectChai": `
 it('x === true', () => {
   expect(true).to.be.true;
@@ -62,6 +62,26 @@ it('x === true', () => {
       "jest": `
 test('x === true', () => {
   expect(true).toBe(true);
+});
+      `
+    },
+     {
+      "key": "0:3",
+      "name": "x === false",
+      "description": "Строгое сравнение на ложность",
+      "expectChai": `
+it('x === false', () => {
+  expect(false).to.be.false;
+});
+      `,
+      "assertChai": `
+it('x === false', () => {
+  assert.isFalse(false);
+});
+      `,
+      "jest": `
+test('x === false', () => {
+  expect(false).toBe(false);
 });
       `
     },

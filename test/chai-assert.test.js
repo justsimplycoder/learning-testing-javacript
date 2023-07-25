@@ -11,6 +11,9 @@ describe('Тесты Chai стиль assert', () => {
 		it('x === true', () => {
 			assert.isTrue(true);
 		});
+		it('x === false', () => {
+			assert.isFalse(false);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

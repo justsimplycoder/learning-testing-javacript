@@ -12,6 +12,9 @@ describe('Тесты Chai стиль expect', () => {
 		it('x === true', () => {
 			expect(true).to.be.true;
 		});
+		it('x === false', () => {
+			expect(false).to.be.false;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {
