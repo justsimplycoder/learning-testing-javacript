@@ -84,6 +84,8 @@ describe('Тесты Jest', () => {
 			expect(new Set([1, 2, 3]).size).toBe(3);
 			expect(new Map([['a', 1], ['b', 2], ['c', 3]]).size).toBe(3);
 		});
-
+		test('match', () => {
+			expect('foobar').toMatch(/^foo/);
+		});
 	});
 });

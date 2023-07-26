@@ -79,6 +79,8 @@ describe('Тесты Chai стиль assert', () => {
 			assert.lengthOf(new Set([1, 2, 3]), 3);
 			assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
 		});
-
+		it('match', () => {
+			assert.match('foobar', /^foo/);
+		});
 	});
 });

@@ -189,20 +189,6 @@ test('x === finite', () => {
 });
       `
     },
-    {
-      "key": "0:1",
-      "name": "name",
-      "description": "",
-      "expectChai": `
-
-      `,
-      "assertChai": `
-
-      `,
-      "jest": `
-
-      `
-    },
   ]
 },
 {
@@ -395,29 +381,15 @@ test('type function', () => {
 });
       `
     },
-    {
-      "key": "1:2",
-      "name": "name",
-      "description": "",
-      "expectChai": `
-
-      `,
-      "assertChai": `
-
-      `,
-      "jest": `
-
-      `
-    },
   ]
 },
 {
-  "key": 1,
+  "key": 2,
   "title": "Разное",
   "visible": true,
   "content": [
     {
-      "key": "3:0",
+      "key": "2:0",
       "name": "length",
       "description": "Длина значения",
       "expectChai": `
@@ -449,17 +421,23 @@ test('length', () => {
       `
     },
     {
-      "key": "3:1",
-      "name": "name",
-      "description": "",
+      "key": "2:1",
+      "name": "match",
+      "description": "Соответствие регулярному выражению",
       "expectChai": `
-
+it('match', () => {
+  expect('foobar').to.match(/^foo/);
+});
       `,
       "assertChai": `
-
+it('match', () => {
+  assert.match('foobar', /^foo/);
+});
       `,
       "jest": `
-
+test('match', () => {
+  expect('foobar').toMatch(/^foo/);
+});
       `
     },
   ]

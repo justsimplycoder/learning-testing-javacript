@@ -75,5 +75,8 @@ describe('Тесты Chai стиль expect', () => {
 			expect(new Set([1, 2, 3])).to.have.lengthOf(3);
 			expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
 		});
+		it('match', () => {
+			expect('foobar').to.match(/^foo/);
+		});
 	});
 });

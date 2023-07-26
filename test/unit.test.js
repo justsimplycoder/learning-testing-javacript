@@ -252,13 +252,6 @@ describe('Тесты', () => {
 			value: 1,
 		});
 	});
-	// Утверждает, что цель соответствует заданному регулярному выражению re.
-	it('.match', () => {
-		expect('foobar').to.match(/^foo/);
-		assert.match('foobar', /^foo/);
-		expect('foobar').to.not.match(/taco/);
-		assert.notMatch('foobar', /taco/);
-	});
 	// Утверждает, что целевая строка содержит заданную подстроку str.
 	it('.string', () => {
 		expect('foobar').to.have.string('bar');
