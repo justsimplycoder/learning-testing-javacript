@@ -3,13 +3,6 @@ const {expect, assert} = require('chai');
 // it.only - пропускает тест
 // it.skip - не запускает тест, в ожидании
 describe('Тесты', () => {
-	// Отменяет все утверждения, которые следуют в цепочке.
-	it('.not', () => {
-		expect(() => {}).to.not.throw();
-		expect({a: 1}).to.not.have.property('b');
-		expect(1).to.not.equal(2);
-		assert.notEqual(1, 2);
-	});
 	// Заставляет все утверждения .equal, .include, .members, .keys и .property, следующие в цепочке, использовать глубокое равенство вместо строгого (===) равенства. См. страницу проекта deep-eql для получения информации об алгоритме глубокого равенства: https://github.com/chaijs/deep-eql.
 	it('.deep', () => {
 		expect({a: 1}).to.deep.equal({a: 1});
@@ -116,13 +109,6 @@ describe('Тесты', () => {
 		expect(true).to.not.be.undefined;
 		assert.isDefined(true);
 	})
-	// Утверждает, что целью является именно NaN.
-	it('.NaN, .isNaN', () => {
-		expect(NaN).to.be.NaN;
-		assert.isNaN(NaN);
-		expect(true).to.not.be.NaN;
-		assert.isNotNaN(true);
-	});
 	// Утверждает, что цель не является строго (===) равной null или undefined.
 	it('.exist, .exists', () => {
 		expect(true).to.exist;
@@ -472,11 +458,6 @@ describe('Тесты', () => {
 
 		expect({a: 1}).to.not.be.frozen;
 		assert.isNotFrozen({a: 1});
-	});
-	// Утверждает, что значение является конечным числом. В отличие от .isNumber, это не удастся для NaN и Infinity.
-	it('.finite, isFinite', () => {
-		expect(1).to.be.finite;
-		assert.isFinite(1);
 	});
 	// Утверждает, если значение не является ложным значением, и выдает, если оно является истинным значением. Это добавлено, чтобы chai мог заменить класс assert узла
 	it('ifError', () => {

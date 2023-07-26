@@ -32,6 +32,9 @@ describe('Тесты Chai стиль assert', () => {
 		it('x === NaN', () => {
 			assert.isNaN(NaN);
 		});
+		it('x === finite', () => {
+			assert.isFinite(1);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

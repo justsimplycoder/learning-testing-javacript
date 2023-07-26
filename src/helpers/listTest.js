@@ -170,6 +170,26 @@ test('x === NaN', () => {
       `
     },
     {
+      "key": "0:7",
+      "name": "x === finite",
+      "description": "Является ли значение конечным числом, с NaN и Infinity это не удастся.",
+      "expectChai": `
+it('x === finite', () => {
+  expect(1).to.be.finite;
+});
+      `,
+      "assertChai": `
+it('x === finite', () => {
+  assert.isFinite(1);
+});
+      `,
+      "jest": `
+test('x === finite', () => {
+  expect(Number.isFinite(1)).toBe(true);
+});
+      `
+    },
+    {
       "key": "0:1",
       "name": "name",
       "description": "",

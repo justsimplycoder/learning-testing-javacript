@@ -34,6 +34,9 @@ describe('Тесты Jest', () => {
 		test('x === NaN', () => {
 			expect(NaN).toBeNaN();
 		});
+		test('x === finite', () => {
+			expect(Number.isFinite(1)).toBe(true);
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {
