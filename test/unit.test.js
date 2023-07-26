@@ -252,17 +252,6 @@ describe('Тесты', () => {
 			value: 1,
 		});
 	});
-	// Утверждает, что длина или размер цели равны заданному числу n.
-	it('.lengthOf', () => {
-		expect([1, 2, 3]).to.have.lengthOf(3);
-		assert.lengthOf([1, 2, 3], 3);
-		expect('foo').to.have.lengthOf(3);
-		assert.lengthOf('foo', 3);
-		expect(new Set([1, 2, 3])).to.have.lengthOf(3);
-		assert.lengthOf(new Set([1, 2, 3]), 3);
-		expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
-		assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
-	});
 	// Утверждает, что цель соответствует заданному регулярному выражению re.
 	it('.match', () => {
 		expect('foobar').to.match(/^foo/);

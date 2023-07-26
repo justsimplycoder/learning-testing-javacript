@@ -411,6 +411,59 @@ test('type function', () => {
     },
   ]
 },
+{
+  "key": 1,
+  "title": "Разное",
+  "visible": true,
+  "content": [
+    {
+      "key": "3:0",
+      "name": "length",
+      "description": "Длина значения",
+      "expectChai": `
+it('length', () => {
+  expect([1, 2, 3]).to.have.lengthOf(3);
+  expect('text').to.have.lengthOf(4);
+  expect(new Set([1, 2, 3])).to.have.lengthOf(3);
+  expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
+});
+      `,
+      "assertChai": `
+it('length', () => {
+  assert.lengthOf([1, 2, 3], 3);
+  assert.lengthOf('text', 4);
+  assert.lengthOf(new Set([1, 2, 3]), 3);
+  assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
+});
+      `,
+      "jest": `
+test('length', () => {
+  expect([1, 2, 3]).toHaveLength(3);
+  expect('text').toHaveLength(4);
+  // Не будет работать
+  // expect(new Set([1, 2, 3])).toHaveLength(3);
+  // expect(new Map([['a', 1], ['b', 2], ['c', 3]])).toHaveLength(3);
+  expect(new Set([1, 2, 3]).size).toBe(3);
+  expect(new Map([['a', 1], ['b', 2], ['c', 3]]).size).toBe(3);
+});
+      `
+    },
+    {
+      "key": "3:1",
+      "name": "name",
+      "description": "",
+      "expectChai": `
+
+      `,
+      "assertChai": `
+
+      `,
+      "jest": `
+
+      `
+    },
+  ]
+},
 ];
 
 export default listTest;

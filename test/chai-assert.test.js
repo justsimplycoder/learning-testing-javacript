@@ -72,4 +72,13 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isFunction(f);
 		});
 	});
+	describe('Разное', () => {
+		it('length', () => {
+			assert.lengthOf([1, 2, 3], 3);
+			assert.lengthOf('text', 4);
+			assert.lengthOf(new Set([1, 2, 3]), 3);
+			assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
+		});
+
+	});
 });

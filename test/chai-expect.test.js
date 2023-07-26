@@ -68,4 +68,12 @@ describe('Тесты Chai стиль expect', () => {
 			expect(f).to.be.a('function');
 		});
 	});
+	describe('Разное', () => {
+		it('length', () => {
+			expect([1, 2, 3]).to.have.lengthOf(3);
+			expect('text').to.have.lengthOf(4);
+			expect(new Set([1, 2, 3])).to.have.lengthOf(3);
+			expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
+		});
+	});
 });

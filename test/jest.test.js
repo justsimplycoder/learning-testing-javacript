@@ -74,4 +74,16 @@ describe('Тесты Jest', () => {
 			expect(f).toEqual(expect.any(Function));
 		});
 	});
+	describe('Разное', () => {
+		test('length', () => {
+			expect([1, 2, 3]).toHaveLength(3);
+			expect('text').toHaveLength(4);
+			// Не будет работать
+			// expect(new Set([1, 2, 3])).toHaveLength(3);
+			// expect(new Map([['a', 1], ['b', 2], ['c', 3]])).toHaveLength(3);
+			expect(new Set([1, 2, 3]).size).toBe(3);
+			expect(new Map([['a', 1], ['b', 2], ['c', 3]]).size).toBe(3);
+		});
+
+	});
 });
