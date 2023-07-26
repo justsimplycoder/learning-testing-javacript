@@ -31,6 +31,9 @@ describe('Тесты Jest', () => {
 			expect(undefined).toBeFalsy();
 			expect(NaN).toBeFalsy();
 		});
+		test('x === NaN', () => {
+			expect(NaN).toBeNaN();
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

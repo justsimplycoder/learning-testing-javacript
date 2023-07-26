@@ -29,6 +29,9 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isNotOk(undefined);
 			assert.isNotOk(NaN);
 		});
+		it('x === NaN', () => {
+			assert.isNaN(NaN);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

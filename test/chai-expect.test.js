@@ -30,6 +30,9 @@ describe('Тесты Chai стиль expect', () => {
 			expect(undefined).to.be.not.ok;
 			expect(NaN).to.be.not.ok;
 		});
+		it('x === NaN', () => {
+			expect(NaN).to.be.NaN;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

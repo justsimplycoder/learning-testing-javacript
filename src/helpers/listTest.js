@@ -150,6 +150,26 @@ test('x == false', () => {
       `
     },
     {
+      "key": "0:6",
+      "name": "x === NaN",
+      "description": "Значение не число (NaN)",
+      "expectChai": `
+it('x === NaN', () => {
+  expect(NaN).to.be.NaN;
+});
+      `,
+      "assertChai": `
+it('x === NaN', () => {
+  assert.isNaN(NaN);
+});
+      `,
+      "jest": `
+test('x === NaN', () => {
+  expect(NaN).toBeNaN();
+});
+      `
+    },
+    {
       "key": "0:1",
       "name": "name",
       "description": "",
