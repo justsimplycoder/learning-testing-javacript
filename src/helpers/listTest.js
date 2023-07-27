@@ -466,6 +466,27 @@ test('match', () => {
 });
       `
     },
+    {
+      "key": "2:2",
+      "name": "string include",
+      "description": "Утверждает что целевая строка содержит подстроку.",
+      "expectChai": `
+it('string include', () => {
+  expect('foobar').to.have.string('bar');
+  expect('foobar').to.include.string('bar');
+});
+      `,
+      "assertChai": `
+it('string include', () => {
+  assert.include('foobar', 'bar');
+});
+      `,
+      "jest": `
+it('string include', () => {
+  expect('foobar').toEqual(expect.stringContaining('bar'));
+});
+      `
+    },
   ]
 },
 ];

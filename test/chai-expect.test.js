@@ -83,5 +83,9 @@ describe('Тесты Chai стиль expect', () => {
 		it('match', () => {
 			expect('foobar').to.match(/^foo/);
 		});
+		it('string include', () => {
+			expect('foobar').to.have.string('bar');
+			expect('foobar').to.include.string('bar');
+		});
 	});
 });

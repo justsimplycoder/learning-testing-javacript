@@ -87,5 +87,8 @@ describe('Тесты Chai стиль assert', () => {
 		it('match', () => {
 			assert.match('foobar', /^foo/);
 		});
+		it('string include', () => {
+			assert.include('foobar', 'bar');
+		});
 	});
 });

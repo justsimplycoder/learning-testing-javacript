@@ -92,5 +92,8 @@ describe('Тесты Jest', () => {
 		test('match', () => {
 			expect('foobar').toMatch(/^foo/);
 		});
+		it('string include', () => {
+			expect('foobar').toEqual(expect.stringContaining('bar'));
+		});
 	});
 });
