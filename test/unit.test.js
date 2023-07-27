@@ -109,15 +109,6 @@ describe('Тесты', () => {
 		expect(true).to.not.be.undefined;
 		assert.isDefined(true);
 	})
-	// Утверждает, что цель не является строго (===) равной null или undefined.
-	it('.exist, .exists', () => {
-		expect(true).to.exist;
-		assert.exists(true);
-		expect(undefined).to.not.exist;
-		expect(null).to.not.exist;
-		assert.notExists(undefined);
-		assert.notExists(null);
-	});
 	// Когда целью является строка или массив, .empty утверждает, что свойство длины цели строго (===) равно 0
 	it('.empty', () => {
 		expect([]).to.be.empty;

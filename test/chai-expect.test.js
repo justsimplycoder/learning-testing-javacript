@@ -36,6 +36,11 @@ describe('Тесты Chai стиль expect', () => {
 		it('x === finite', () => {
 			expect(1).to.be.finite;
 		});
+		it('x !== null && x !== undefined', () => {
+			expect(1).to.exist;
+			expect(undefined).to.not.exist;
+			expect(null).to.not.exist;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

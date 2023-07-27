@@ -189,6 +189,32 @@ test('x === finite', () => {
 });
       `
     },
+    {
+      "key": "0:8",
+      "name": "x !== null && x !== undefined",
+      "description": "Утверждает, что цель не является строго (===) равной null или undefined.",
+      "expectChai": `
+it('x !== null && x !== undefined', () => {
+  expect(1).to.exist;
+  expect(undefined).to.not.exist;
+  expect(null).to.not.exist;
+});
+      `,
+      "assertChai": `
+it('x !== null && x !== undefined', () => {
+  assert.exists(1);
+  assert.notExists(undefined);
+  assert.notExists(null);
+});
+      `,
+      "jest": `
+test('x !== null && x !== undefined', () => {
+  expect(1).toEqual(expect.anything());
+  expect(undefined).not.toEqual(expect.anything());
+  expect(null).not.toEqual(expect.anything());
+});
+      `
+    },
   ]
 },
 {

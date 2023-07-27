@@ -35,6 +35,11 @@ describe('Тесты Chai стиль assert', () => {
 		it('x === finite', () => {
 			assert.isFinite(1);
 		});
+		it('x !== null && x !== undefined', () => {
+			assert.exists(1);
+			assert.notExists(undefined);
+			assert.notExists(null);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

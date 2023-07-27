@@ -37,6 +37,11 @@ describe('Тесты Jest', () => {
 		test('x === finite', () => {
 			expect(Number.isFinite(1)).toBe(true);
 		});
+		test('x !== null && x !== undefined', () => {
+			expect(1).toEqual(expect.anything());
+			expect(undefined).not.toEqual(expect.anything());
+			expect(null).not.toEqual(expect.anything());
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {
