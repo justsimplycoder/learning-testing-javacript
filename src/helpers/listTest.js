@@ -484,6 +484,7 @@ it('string include', () => {
       "jest": `
 it('string include', () => {
   expect('foobar').toEqual(expect.stringContaining('bar'));
+  expect('foobar').toContain('bar');
 });
       `
     },
