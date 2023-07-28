@@ -90,5 +90,8 @@ describe('Тесты Chai стиль assert', () => {
 		it('string include', () => {
 			assert.include('foobar', 'bar');
 		});
+		it('array include', () => {
+			assert.include([1, 2, 3], 2);
+		});
 	});
 });

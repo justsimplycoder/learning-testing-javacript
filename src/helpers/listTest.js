@@ -488,6 +488,26 @@ it('string include', () => {
 });
       `
     },
+    {
+      "key": "2:3",
+      "name": "array include",
+      "description": "Утверждает что элемент присутствует в массиве.",
+      "expectChai": `
+it('array include', () => {
+  expect([1, 2, 3]).to.include(2);
+});
+      `,
+      "assertChai": `
+it('array include', () => {
+  assert.include([1, 2, 3], 2);
+});
+      `,
+      "jest": `
+it('array include', () => {
+  expect([1, 2, 3]).toContain(2);
+});
+      `
+    },
   ]
 },
 ];

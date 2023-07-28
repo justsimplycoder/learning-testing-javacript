@@ -74,11 +74,8 @@ describe('Тесты', () => {
 	});
 	// Когда целью является строка, .include утверждает, что данная строка val является подстрокой цели.
 	it('.include', () => {
-		expect('foobar').to.include('bar');
-		assert.include('foobar', 'bar');
-		expect([1, 2, 3]).to.include(2);
-		expect([1, 2, 3]).to.be.an('array').that.includes(2);
-		assert.include([1, 2, 3], 2);
+
+
 		expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});
 		assert.include({a: 1, b: 2, c: 3}, {a: 1, b: 2});
 		expect(new Set([1, 2])).to.include(1);

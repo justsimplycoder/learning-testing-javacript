@@ -96,5 +96,8 @@ describe('Тесты Jest', () => {
 			expect('foobar').toEqual(expect.stringContaining('bar'));
 			expect('foobar').toContain('bar');
 		});
+		it('array include', () => {
+			expect([1, 2, 3]).toContain(2);
+		});
 	});
 });
