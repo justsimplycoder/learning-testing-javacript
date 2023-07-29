@@ -100,4 +100,13 @@ describe('Тесты Jest', () => {
 			expect([1, 2, 3]).toContain(2);
 		});
 	});
+	describe('Объекты', () => {
+		test('new Obj instanceof Obj', () => {
+			function Cat () { }
+			expect(new Cat).toEqual(expect.any(Cat));
+			expect({a: 1}).toEqual(expect.any(Object));
+			expect([1, 2, 3]).toEqual(expect.any(Array));
+			expect(() => {}).toEqual(expect.any(Function));
+		});
+	});
 });

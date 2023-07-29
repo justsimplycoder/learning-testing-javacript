@@ -510,6 +510,46 @@ it('array include', () => {
     },
   ]
 },
+{
+  "key": 3,
+  "title": "Объекты",
+  "visible": true,
+  "content": [
+    {
+      "key": "3:0",
+      "name": "new Obj instanceof Obj",
+      "description": "Соответствует всему что было создано с помощью указанного конструктора.",
+      "expectChai": `
+it('new Obj instanceof Obj', () => {
+  function Cat () { }
+  expect(new Cat()).to.be.a.instanceof(Cat);
+  expect({a: 1}).to.be.an.instanceof(Object);
+  expect([1, 2, 3]).to.be.an.instanceof(Array);
+  expect(() => {}).to.be.a.instanceof(Function);
+});
+      `,
+      "assertChai": `
+it('new Obj instanceof Obj', () => {
+  function Cat () { }
+  assert.instanceOf(new Cat, Cat);
+  assert.instanceOf({a: 1}, Object);
+  assert.instanceOf([1, 2, 3], Array);
+  assert.instanceOf(() => {}, Function);
+});
+      `,
+      "jest": `
+test('new Obj instanceof Obj', () => {
+  function Cat () { }
+  expect(new Cat).toEqual(expect.any(Cat));
+  expect({a: 1}).toEqual(expect.any(Object));
+  expect([1, 2, 3]).toEqual(expect.any(Array));
+  expect(() => {}).toEqual(expect.any(Function));
+});
+      `
+    },
+
+  ]
+},
 ];
 
 export default listTest;

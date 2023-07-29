@@ -94,4 +94,13 @@ describe('Тесты Chai стиль assert', () => {
 			assert.include([1, 2, 3], 2);
 		});
 	});
+	describe('Объекты', () => {
+		it('new Obj instanceof Obj', () => {
+			function Cat () { }
+			assert.instanceOf(new Cat, Cat);
+			assert.instanceOf({a: 1}, Object);
+			assert.instanceOf([1, 2, 3], Array);
+			assert.instanceOf(() => {}, Function);
+		});
+	});
 });

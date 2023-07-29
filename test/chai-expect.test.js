@@ -91,4 +91,13 @@ describe('Тесты Chai стиль expect', () => {
 			expect([1, 2, 3]).to.include(2);
 		});
 	});
+	describe('Объекты', () => {
+		it('new Obj instanceof Obj', () => {
+			function Cat () { }
+			expect(new Cat()).to.be.a.instanceof(Cat);
+			expect({a: 1}).to.be.an.instanceof(Object);
+			expect([1, 2, 3]).to.be.an.instanceof(Array);
+			expect(() => {}).to.be.a.instanceof(Function);
+		});
+	});
 });

@@ -204,16 +204,6 @@ describe('Тесты', () => {
 		expect('foo').to.have.lengthOf.within(2, 4);
 		expect([1, 2, 3]).to.have.lengthOf.within(2, 4);
 	});
-	// Утверждает, что цель является экземпляром данного конструктора
-	it('.instanceof', () => {
-		function Cat () { }
-		expect(new Cat()).to.be.an.instanceof(Cat);
-		assert.instanceOf(new Cat, Cat);
-		expect([1, 2]).to.be.an.instanceof(Array);
-		assert.instanceOf([1, 2], Array);
-		expect({a: 1}).to.not.be.an.instanceof(Array);
-		assert.notInstanceOf({a: 1}, Array);
-	});
 	// Утверждает, что цель имеет свойство с заданным именем ключа.
 	it('.property', () => {
 		expect({a: 1}).to.have.property('a');
