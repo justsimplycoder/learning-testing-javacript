@@ -40,6 +40,10 @@ describe('Тесты Chai стиль assert', () => {
 			assert.notExists(undefined);
 			assert.notExists(null);
 		});
+		it('x !== undefined', () => {
+			let x = null;
+			assert.isDefined(x);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

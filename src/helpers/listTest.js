@@ -215,6 +215,29 @@ test('x !== null && x !== undefined', () => {
 });
       `
     },
+    {
+      "key": "0:9",
+      "name": "x !== undefined",
+      "description": "Переменная определена.",
+      "expectChai": `
+it('x !== undefined', () => {
+  let x = null;
+  expect(x).to.not.be.undefined;
+});;
+      `,
+      "assertChai": `
+it('x !== undefined', () => {
+  let x = null;
+  assert.isDefined(x);
+});
+      `,
+      "jest": `
+test('x !== undefined', () => {
+  let x = null;
+  expect(x).toBeDefined();
+});
+      `
+    },
   ]
 },
 {

@@ -42,6 +42,10 @@ describe('Тесты Jest', () => {
 			expect(undefined).not.toEqual(expect.anything());
 			expect(null).not.toEqual(expect.anything());
 		});
+		test('x !== undefined', () => {
+			let x = null;
+			expect(x).toBeDefined();
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

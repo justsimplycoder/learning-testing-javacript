@@ -41,6 +41,10 @@ describe('Тесты Chai стиль expect', () => {
 			expect(undefined).to.not.exist;
 			expect(null).to.not.exist;
 		});
+		it('x !== undefined', () => {
+			let x = null;
+			expect(x).to.not.be.undefined;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

@@ -101,11 +101,6 @@ describe('Тесты', () => {
 		assert.notDeepInclude({foo: obj1, bar: obj2}, {foo: {a: 9}});
 		assert.notDeepInclude({foo: obj1, bar: obj2}, {foo: {a: 1}, bar: {b: 9}});
 	});
-	// Утверждает, что цель строго (!==) не равна undefined.
-	it('isDefined', () => {
-		expect(true).to.not.be.undefined;
-		assert.isDefined(true);
-	})
 	// Когда целью является строка или массив, .empty утверждает, что свойство длины цели строго (===) равно 0
 	it('.empty', () => {
 		expect([]).to.be.empty;
