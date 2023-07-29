@@ -199,22 +199,6 @@ describe('Тесты', () => {
 		expect('foo').to.have.lengthOf.within(2, 4);
 		expect([1, 2, 3]).to.have.lengthOf.within(2, 4);
 	});
-	// Утверждает, что цель имеет свойство с заданным именем ключа.
-	it('.property', () => {
-		expect({a: 1}).to.have.property('a');
-		assert.property({a: 1}, 'a')
-		expect({a: 1}).to.have.property('a', 1);
-		assert.propertyVal({a: 1}, 'a', 1);
-		expect({x: {a: 1}}).to.have.deep.property('x', {a: 1});
-		assert.deepPropertyVal({x: {a: 1}}, 'x', {a: 1});
-		expect({a: {b: ['x', 'y']}}).to.have.nested.property('a.b[1]');
-		assert.nestedProperty({a: {b: ['x', 'y']}}, 'a.b[1]')
-		expect({a: {b: ['x', 'y']}}).to.have.nested.property('a.b[1]', 'y');
-		assert.nestedPropertyVal({a: {b: ['x', 'y']}}, 'a.b[1]', 'y')
-		expect({a: {b: [{c: 3}]}}).to.have.deep.nested.property('a.b[0]', {c: 3});
-		assert.deepNestedPropertyVal({a: {b: [{c: 3}]}}, 'a.b[0]', {c: 3})
-		expect({a: 1}).to.have.property('a').that.is.a('number');
-	});
 	// Утверждает, что цель имеет собственный дескриптор свойства с заданным именем ключа. Перечислимые и неперечислимые свойства включаются в поиск.
 	it('.ownPropertyDescriptor', () => {
 		expect({a: 1}).to.have.ownPropertyDescriptor('a');

@@ -112,5 +112,23 @@ describe('Тесты Jest', () => {
 			expect([1, 2, 3]).toEqual(expect.any(Array));
 			expect(() => {}).toEqual(expect.any(Function));
 		});
+		test('property Object', () => {
+			const obj = {
+				a: 1,
+				b: [1, 2, 3],
+				c: {
+					x: 1,
+					y: 2
+				},
+				d: [{a: 11}, {b: 22}, {c: 33}]
+			};
+
+			expect(obj).toHaveProperty('a');
+			expect(obj).toHaveProperty('a', 1);
+			expect(obj).toHaveProperty('c', {x: 1, y: 2});
+			expect(obj).toHaveProperty('d[1].b');
+			expect(obj).toHaveProperty('d[1].b', 22);
+			expect(obj).toHaveProperty('d[1]', {b: 22});
+		});
 	});
 });

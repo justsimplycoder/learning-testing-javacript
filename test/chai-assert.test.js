@@ -106,5 +106,23 @@ describe('Тесты Chai стиль assert', () => {
 			assert.instanceOf([1, 2, 3], Array);
 			assert.instanceOf(() => {}, Function);
 		});
+		it('property Object', () => {
+			const obj = {
+				a: 1,
+				b: [1, 2, 3],
+				c: {
+					x: 1,
+					y: 2
+				},
+				d: [{a: 11}, {b: 22}, {c: 33}]
+			};
+
+			assert.property(obj, 'a');
+			assert.propertyVal(obj, 'a', 1);
+			assert.deepPropertyVal(obj, 'c', {x:1, y:2});
+			assert.nestedProperty(obj, 'd[1].b');
+			assert.nestedPropertyVal(obj, 'd[1].b', 22);
+			assert.deepNestedPropertyVal(obj, 'd[1]', {b: 22});
+		});
 	});
 });

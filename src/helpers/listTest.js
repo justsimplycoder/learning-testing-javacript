@@ -570,7 +570,71 @@ test('new Obj instanceof Obj', () => {
 });
       `
     },
+    {
+      "key": "3:1",
+      "name": "property Object",
+      "description": "Наличие свойства и его значение в объекте.",
+      "expectChai": `
+it('property Object', () => {
+  const obj = {
+    a: 1,
+    b: [1, 2, 3],
+    c: {
+      x: 1,
+      y: 2
+    },
+    d: [{a: 11}, {b: 22}, {c: 33}]
+  };
 
+  expect(obj).to.have.property('a');
+  expect(obj).to.have.property('a', 1);
+  expect(obj).to.have.deep.property('c', {x:1, y:2});
+  expect(obj).to.have.nested.property('d[1].b');
+  expect(obj).to.have.nested.property('d[1].b', 22);
+  expect(obj).to.have.deep.nested.property('d[1]', {b: 22});
+});
+      `,
+      "assertChai": `
+it('property Object', () => {
+  const obj = {
+    a: 1,
+    b: [1, 2, 3],
+    c: {
+      x: 1,
+      y: 2
+    },
+    d: [{a: 11}, {b: 22}, {c: 33}]
+  };
+
+  assert.property(obj, 'a');
+  assert.propertyVal(obj, 'a', 1);
+  assert.deepPropertyVal(obj, 'c', {x:1, y:2});
+  assert.nestedProperty(obj, 'd[1].b');
+  assert.nestedPropertyVal(obj, 'd[1].b', 22);
+  assert.deepNestedPropertyVal(obj, 'd[1]', {b: 22});
+});
+      `,
+      "jest": `
+test('property Object', () => {
+  const obj = {
+    a: 1,
+    b: [1, 2, 3],
+    c: {
+      x: 1,
+      y: 2
+    },
+    d: [{a: 11}, {b: 22}, {c: 33}]
+  };
+
+  expect(obj).toHaveProperty('a');
+  expect(obj).toHaveProperty('a', 1);
+  expect(obj).toHaveProperty('c', {x: 1, y: 2});
+  expect(obj).toHaveProperty('d[1].b');
+  expect(obj).toHaveProperty('d[1].b', 22);
+  expect(obj).toHaveProperty('d[1]', {b: 22});
+});
+      `
+    },
   ]
 },
 ];

@@ -103,5 +103,23 @@ describe('Тесты Chai стиль expect', () => {
 			expect([1, 2, 3]).to.be.an.instanceof(Array);
 			expect(() => {}).to.be.a.instanceof(Function);
 		});
+		it('property Object', () => {
+			const obj = {
+				a: 1,
+				b: [1, 2, 3],
+				c: {
+					x: 1,
+					y: 2
+				},
+				d: [{a: 11}, {b: 22}, {c: 33}]
+			};
+
+			expect(obj).to.have.property('a');
+			expect(obj).to.have.property('a', 1);
+			expect(obj).to.have.deep.property('c', {x:1, y:2});
+			expect(obj).to.have.nested.property('d[1].b');
+			expect(obj).to.have.nested.property('d[1].b', 22);
+			expect(obj).to.have.deep.nested.property('d[1]', {b: 22});
+		});
 	});
 });
