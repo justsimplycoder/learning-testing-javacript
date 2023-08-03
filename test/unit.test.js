@@ -147,19 +147,6 @@ describe('Тесты', () => {
 		expect({ tea: 'green' }).to.deep.not.equal({ tea: 'jasmine' });
 		assert.notDeepEqual({ tea: 'green' }, { tea: 'jasmine' })
 	});
-	// Утверждает, что целью является число или дата, меньшая или равная заданному числу или дате n соответственно.
-	it('.most, .isAtMost', () => {
-		expect(2).to.be.at.most(3);
-		expect(2).to.be.at.most(2);
-		expect(2).to.be.most(3);
-		expect(2).to.be.most(2);
-		assert.isAtMost(2, 3);
-		assert.isAtMost(2, 2);
-		expect('foo').to.have.lengthOf.most(4);
-		expect('foo').to.have.lengthOf.most(3);
-		expect([1, 2, 3]).to.have.lengthOf.most(4);
-		expect([1, 2, 3]).to.have.lengthOf.most(3);
-	});
 	// Диапазон. Утверждает, что цель представляет собой число или дату, большую или равную заданному числу или дате начала и меньшую или равную заданному числу или дате окончания соответственно.
 	it('.within', () => {
 		expect(2).to.equal(2);

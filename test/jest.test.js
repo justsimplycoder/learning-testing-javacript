@@ -57,6 +57,10 @@ describe('Тесты Jest', () => {
 		test('x < y', () => {
 			expect(10).toBeLessThan(11);
 		});
+		test('x <= y', () => {
+			expect(10).toBeLessThanOrEqual(11);
+			expect(11).toBeLessThanOrEqual(11);
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

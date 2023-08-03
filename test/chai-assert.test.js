@@ -55,6 +55,10 @@ describe('Тесты Chai стиль assert', () => {
 		it('x < y', () => {
 			assert.isBelow(10, 11);
 		});
+		it('x <= y', () => {
+			assert.isAtMost(10, 11);
+			assert.isAtMost(11, 11);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {
