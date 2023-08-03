@@ -147,19 +147,6 @@ describe('Тесты', () => {
 		expect({ tea: 'green' }).to.deep.not.equal({ tea: 'jasmine' });
 		assert.notDeepEqual({ tea: 'green' }, { tea: 'jasmine' })
 	});
-	// Утверждает, что целью является число или дата, большие или равные заданному числу или дате n соответственно.
-	it('.least, .isAtLeast', () => {
-		expect(2).to.be.at.least(1);
-		expect(2).to.be.at.least(2);
-		expect(2).to.be.least(1);
-		expect(2).to.be.least(2);
-		assert.isAtLeast(2, 1);
-		assert.isAtLeast(2, 2);
-		expect('foo').to.have.lengthOf.least(2);
-		expect('foo').to.have.lengthOf.least(3);
-		expect([1, 2, 3]).to.have.lengthOf.least(2);
-		expect([1, 2, 3]).to.have.lengthOf.least(3);
-	});
 	// Утверждает, что целью является число или дата, меньшие заданного числа или даты n соответственно.
 	it('.below, .isBelow', () => {
 		expect(2).to.be.at.below(3);

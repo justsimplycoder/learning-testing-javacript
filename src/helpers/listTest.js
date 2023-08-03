@@ -261,6 +261,29 @@ test('x > y', () => {
 });
       `
     },
+    {
+      "key": "0:11",
+      "name": "x >= y",
+      "description": "Сравнение больше равно",
+      "expectChai": `
+it('x >= y', () => {
+  assert.isAtLeast(11, 10);
+  assert.isAtLeast(11, 11);
+})
+      `,
+      "assertChai": `
+it('x >= y', () => {
+  expect(11).to.be.at.least(10);
+  expect(10).to.be.at.least(10);
+});
+      `,
+      "jest": `
+test('x >= y', () => {
+  expect(11).toBeGreaterThanOrEqual(10);
+  expect(10).toBeGreaterThanOrEqual(10);
+});
+      `
+    },
   ]
 },
 {

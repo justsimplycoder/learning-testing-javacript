@@ -50,6 +50,10 @@ describe('Тесты Jest', () => {
 			expect(11).toBeGreaterThan(10);
 			expect(new Date(2000, 12, 17).valueOf()).toBeGreaterThan(new Date(2000, 12, 16).valueOf());
 		});
+		test('x >= y', () => {
+			expect(11).toBeGreaterThanOrEqual(10);
+			expect(10).toBeGreaterThanOrEqual(10);
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

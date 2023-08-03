@@ -48,6 +48,10 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isAbove(11, 10);
 			assert.isAbove(new Date(2000, 12, 17), new Date(2000, 12, 16));
 		});
+		it('x >= y', () => {
+			assert.isAtLeast(11, 10);
+			assert.isAtLeast(11, 11);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {
