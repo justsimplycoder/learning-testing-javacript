@@ -44,6 +44,10 @@ describe('Тесты Chai стиль assert', () => {
 			let x = null;
 			assert.isDefined(x);
 		});
+		it('x > y', () => {
+			assert.isAbove(11, 10);
+			assert.isAbove(new Date(2000, 12, 17), new Date(2000, 12, 16));
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

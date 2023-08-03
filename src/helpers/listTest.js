@@ -238,6 +238,29 @@ test('x !== undefined', () => {
 });
       `
     },
+    {
+      "key": "0:10",
+      "name": "x > y",
+      "description": "Сравнение больше",
+      "expectChai": `
+it('x !== undefined', () => {
+  let x = null;
+  expect(x).to.not.be.undefined;
+});;
+      `,
+      "assertChai": `
+it('x > y', () => {
+  assert.isAbove(11, 10);
+  assert.isAbove(new Date(2000, 12, 17), new Date(2000, 12, 16));
+});
+      `,
+      "jest": `
+test('x > y', () => {
+  expect(11).toBeGreaterThan(10);
+  expect(new Date(2000, 12, 17).valueOf()).toBeGreaterThan(new Date(2000, 12, 16).valueOf());
+});
+      `
+    },
   ]
 },
 {
