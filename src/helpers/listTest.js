@@ -267,20 +267,40 @@ test('x > y', () => {
       "description": "Сравнение больше равно",
       "expectChai": `
 it('x >= y', () => {
-  assert.isAtLeast(11, 10);
-  assert.isAtLeast(11, 11);
-})
+  expect(11).to.be.at.least(10);
+  expect(10).to.be.at.least(10);
+});
       `,
       "assertChai": `
 it('x >= y', () => {
-  expect(11).to.be.at.least(10);
-  expect(10).to.be.at.least(10);
+  assert.isAtLeast(11, 10);
+  assert.isAtLeast(11, 11);
 });
       `,
       "jest": `
 test('x >= y', () => {
   expect(11).toBeGreaterThanOrEqual(10);
   expect(10).toBeGreaterThanOrEqual(10);
+});
+      `
+    },
+    {
+      "key": "0:12",
+      "name": "x < y",
+      "description": "Сравнение меньше",
+      "expectChai": `
+it('x < y', () => {
+  expect(10).to.be.at.below(11);
+});
+      `,
+      "assertChai": `
+it('x < y', () => {
+  assert.isBelow(10, 11);
+});
+      `,
+      "jest": `
+test('x < y', () => {
+  expect(10).toBeLessThan(11);
 });
       `
     },

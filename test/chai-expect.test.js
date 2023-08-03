@@ -53,6 +53,9 @@ describe('Тесты Chai стиль expect', () => {
 			expect(11).to.be.at.least(10);
 			expect(10).to.be.at.least(10);
 		});
+		it('x < y', () => {
+			expect(10).to.be.at.below(11);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {
