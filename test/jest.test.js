@@ -145,6 +145,13 @@ describe('Тесты Jest', () => {
 			expect(obj).toHaveProperty('d[1].b', 22);
 			expect(obj).toHaveProperty('d[1]', {b: 22});
 		});
+		test('frozen Object', () => {
+			let obj = {
+				a: 1
+			};
+			Object.freeze(obj);
+			expect(Object.isFrozen(obj)).toBe(true);
+		});
 	});
 	describe('Error', () => {
 		test('throw Error', () => {

@@ -140,6 +140,13 @@ describe('Тесты Chai стиль assert', () => {
 			assert.nestedPropertyVal(obj, 'd[1].b', 22);
 			assert.deepNestedPropertyVal(obj, 'd[1]', {b: 22});
 		});
+		it('frozen Object', () => {
+			let obj = {
+				a: 1
+			};
+			Object.freeze(obj);
+			assert.isFrozen(obj);
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

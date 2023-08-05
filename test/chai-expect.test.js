@@ -137,6 +137,13 @@ describe('Тесты Chai стиль expect', () => {
 			expect(obj).to.have.nested.property('d[1].b', 22);
 			expect(obj).to.have.deep.nested.property('d[1]', {b: 22});
 		});
+		it('frozen Object', () => {
+			let obj = {
+				a: 1
+			};
+			Object.freeze(obj);
+			expect(obj).to.be.frozen;
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

@@ -724,6 +724,38 @@ test('property Object', () => {
 });
       `
     },
+    {
+      "key": "3:2",
+      "name": "frozen Object",
+      "description": "Объект заморожен.",
+      "expectChai": `
+it('frozen Object', () => {
+  let obj = {
+    a: 1
+  };
+  Object.freeze(obj);
+  expect(obj).to.be.frozen;
+});
+      `,
+      "assertChai": `
+it('frozen Object', () => {
+  let obj = {
+    a: 1
+  };
+  Object.freeze(obj);
+  assert.isFrozen(obj);
+});
+      `,
+      "jest": `
+test('frozen Object', () => {
+  let obj = {
+    a: 1
+  };
+  Object.freeze(obj);
+  expect(Object.isFrozen(obj)).toBe(true);
+});
+      `
+    },
   ]
 },
 {
