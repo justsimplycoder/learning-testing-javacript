@@ -144,6 +144,12 @@ describe('Тесты Chai стиль expect', () => {
 			Object.freeze(obj);
 			expect(obj).to.be.frozen;
 		});
+		it('sealed  Object', () => {
+			let sealedObject = Object.seal({});
+			let frozenObject = Object.freeze({});
+			expect(sealedObject).to.be.sealed;
+			expect(frozenObject).to.be.sealed;
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

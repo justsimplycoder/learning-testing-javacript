@@ -152,6 +152,12 @@ describe('Тесты Jest', () => {
 			Object.freeze(obj);
 			expect(Object.isFrozen(obj)).toBe(true);
 		});
+		test('sealed  Object', () => {
+			let sealedObject = Object.seal({});
+			let frozenObject = Object.freeze({});
+			expect(Object.isSealed(sealedObject)).toBe(true);
+			expect(Object.isSealed(frozenObject)).toBe(true);
+		});
 	});
 	describe('Error', () => {
 		test('throw Error', () => {

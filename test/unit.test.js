@@ -327,18 +327,6 @@ describe('Тесты', () => {
 		expect({a: 1}).to.not.be.sealed;
 		assert.isNotSealed({a: 1});
 	});
-	// Утверждает, что цель заморожена, что означает, что к ней нельзя добавить новые свойства, а ее существующие свойства нельзя переназначить другим значениям, перенастроить или удалить. Примитивы всегда заморожены.
-	it('.frozen', () => {
-		let frozenObject = Object.freeze({});
-
-		expect(frozenObject).to.be.frozen;
-		assert.isFrozen(frozenObject);
-		expect(1).to.be.frozen;
-		assert.isFrozen(1);
-
-		expect({a: 1}).to.not.be.frozen;
-		assert.isNotFrozen({a: 1});
-	});
 	// Утверждает, если значение не является ложным значением, и выдает, если оно является истинным значением. Это добавлено, чтобы chai мог заменить класс assert узла
 	it('ifError', () => {
 		try {

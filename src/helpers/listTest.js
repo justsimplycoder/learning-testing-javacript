@@ -756,6 +756,35 @@ test('frozen Object', () => {
 });
       `
     },
+    {
+      "key": "3:3",
+      "name": "sealed Object",
+      "description": "Объект запечатан.",
+      "expectChai": `
+it('sealed  Object', () => {
+  let sealedObject = Object.seal({});
+  let frozenObject = Object.freeze({});
+  expect(sealedObject).to.be.sealed;
+  expect(frozenObject).to.be.sealed;
+});
+      `,
+      "assertChai": `
+it('sealed  Object', () => {
+  let sealedObject = Object.seal({});
+  let frozenObject = Object.freeze({});
+  assert.isSealed(sealedObject);
+  assert.isSealed(frozenObject);
+});
+      `,
+      "jest": `
+test('sealed  Object', () => {
+  let sealedObject = Object.seal({});
+  let frozenObject = Object.freeze({});
+  expect(Object.isSealed(sealedObject)).toBe(true);
+  expect(Object.isSealed(frozenObject)).toBe(true);
+});
+      `
+    },
   ]
 },
 {

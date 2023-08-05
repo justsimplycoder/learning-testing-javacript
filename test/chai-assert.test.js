@@ -147,6 +147,12 @@ describe('Тесты Chai стиль assert', () => {
 			Object.freeze(obj);
 			assert.isFrozen(obj);
 		});
+		it('sealed  Object', () => {
+			let sealedObject = Object.seal({});
+			let frozenObject = Object.freeze({});
+			assert.isSealed(sealedObject);
+			assert.isSealed(frozenObject);
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {
