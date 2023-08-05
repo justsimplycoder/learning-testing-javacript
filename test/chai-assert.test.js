@@ -141,4 +141,14 @@ describe('Тесты Chai стиль assert', () => {
 			assert.deepNestedPropertyVal(obj, 'd[1]', {b: 22});
 		});
 	});
+	describe('Error', () => {
+		it('throw Error', () => {
+			assert.throws(() => {
+				throw new Error('Ошибка');
+			});
+			assert.throws(() => {
+				throw new TypeError('Ошибка');
+			});
+		});
+	});
 });

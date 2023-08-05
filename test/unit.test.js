@@ -178,15 +178,6 @@ describe('Тесты', () => {
 		expect(new Set(['a', 'b'])).to.have.all.keys('a', 'b');
 		expect({a: 1, b: 2}).to.be.an('object').that.has.all.keys('a', 'b');
 	});
-	// Когда аргументы не указаны, .throw вызывает целевую функцию и утверждает, что возникла ошибка.
-	it('.throw', () => {
-		let badFn = function () { throw new Error('Illegal salmon!'); };
-		expect(badFn).to.throw();
-		assert.throws(badFn,'Illegal salmon!');
-		badFn = function () { throw new TypeError('Illegal salmon!'); };
-		expect(badFn).to.throw(TypeError);
-		assert.throws(badFn, TypeError, 'Illegal salmon!');
-	});
 	// Когда цель не является функциональным объектом, .respondTo утверждает, что у цели есть метод с данным методом имени. Метод может быть собственным или унаследованным, и он может быть перечисляемым или неперечисляемым.
 	it('.respondTo', () => {
 		function O() {

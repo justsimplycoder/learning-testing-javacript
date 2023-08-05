@@ -146,4 +146,14 @@ describe('Тесты Jest', () => {
 			expect(obj).toHaveProperty('d[1]', {b: 22});
 		});
 	});
+	describe('Error', () => {
+		test('throw Error', () => {
+			expect(() => {
+				throw new Error('Ошибка');
+			}).toThrow();
+			expect(() => {
+				throw new TypeError('Ошибка');
+			}).toThrow();
+		});
+	});
 });

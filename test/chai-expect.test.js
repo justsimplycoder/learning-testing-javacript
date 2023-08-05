@@ -138,4 +138,14 @@ describe('Тесты Chai стиль expect', () => {
 			expect(obj).to.have.deep.nested.property('d[1]', {b: 22});
 		});
 	});
+	describe('Error', () => {
+		it('throw Error', () => {
+			expect(() => {
+				throw new Error('Ошибка');
+			}).to.throw();
+			expect(() => {
+				throw new TypeError('Ошибка');
+			}).to.throw();
+		});
+	});
 });

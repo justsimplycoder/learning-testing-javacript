@@ -726,6 +726,48 @@ test('property Object', () => {
     },
   ]
 },
+{
+  "key": 4,
+  "title": "Error",
+  "visible": true,
+  "content": [
+    {
+      "key": "4:0",
+      "name": "throw Error",
+      "description": "Проверка на то что функция бросает исключение.",
+      "expectChai": `
+it('throw Error', () => {
+  expect(() => {
+    throw new Error('Ошибка');
+  }).to.throw();
+  expect(() => {
+    throw new TypeError('Ошибка');
+  }).to.throw();
+});
+      `,
+      "assertChai": `
+it('throw Error', () => {
+  assert.throws(() => {
+    throw new Error('Ошибка');
+  });
+  assert.throws(() => {
+    throw new TypeError('Ошибка');
+  });
+});
+      `,
+      "jest": `
+test('throw Error', () => {
+  expect(() => {
+    throw new Error('Ошибка');
+  }).toThrow();
+  expect(() => {
+    throw new TypeError('Ошибка');
+  }).toThrow();
+});
+      `
+    },
+  ]
+},
 ];
 
 export default listTest;
