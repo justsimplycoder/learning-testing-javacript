@@ -108,6 +108,7 @@ describe('Тесты Chai стиль expect', () => {
 		});
 		it('array include', () => {
 			expect([1, 2, 3]).to.include(2);
+			expect(1).to.be.oneOf([1, 2, 3]);
 		});
 	});
 	describe('Объекты', () => {

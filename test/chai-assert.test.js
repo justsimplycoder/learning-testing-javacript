@@ -111,6 +111,7 @@ describe('Тесты Chai стиль assert', () => {
 		});
 		it('array include', () => {
 			assert.include([1, 2, 3], 2);
+			assert.oneOf(1, [1, 2, 3]);
 		});
 	});
 	describe('Объекты', () => {

@@ -244,8 +244,6 @@ describe('Тесты', () => {
 	});
 	// Утверждает, что цель является членом данного списка массивов.
 	it('.oneOf', () => {
-		expect(1).to.be.oneOf([1, 2, 3]);
-		assert.oneOf(1, [1, 2, 3])
 		expect('Today is sunny').to.contain.oneOf(['sunny', 'cloudy']);
 		expect([1,2,3]).to.contain.oneOf([3,4,5]);
 	});
