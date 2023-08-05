@@ -63,8 +63,7 @@ describe('Тесты', () => {
 		assert.typeOf(new Float32Array, 'float32array');
 		expect(Symbol()).to.be.a('symbol');
 		assert.typeOf(Symbol(), 'symbol');
-		expect(/tes/).to.be.a('regexp');
-		assert.typeOf(/tea/, 'regexp');
+
 		var myObj = {
 			[Symbol.toStringTag]: 'myCustomType'
 		};
@@ -74,8 +73,6 @@ describe('Тесты', () => {
 	});
 	// Когда целью является строка, .include утверждает, что данная строка val является подстрокой цели.
 	it('.include', () => {
-
-
 		expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});
 		assert.include({a: 1, b: 2, c: 3}, {a: 1, b: 2});
 		expect(new Set([1, 2])).to.include(1);
@@ -293,24 +290,6 @@ describe('Тесты', () => {
 		let addTwo = function () { myObj.val += 2; };
 
 		expect(addTwo).to.increase(myObj, 'val').by(2);
-	});
-	// Утверждает, что цель является расширяемой, что означает, что к ней можно добавлять новые свойства. Примитивы никогда не расширяемы.
-	it('.extensible', () => {
-		expect({a: 1}).to.be.extensible;
-		assert.isExtensible({a: 1});
-
-		let nonExtensibleObject = Object.preventExtensions({});
-		let sealedObject = Object.seal({});
-		let frozenObject = Object.freeze({});
-
-		expect(nonExtensibleObject).to.not.be.extensible;
-		assert.isNotExtensible(nonExtensibleObject);
-		expect(sealedObject).to.not.be.extensible;
-		assert.isNotExtensible(sealedObject);
-		expect(frozenObject).to.not.be.extensible;
-		assert.isNotExtensible(frozenObject);
-		expect(1).to.not.be.extensible;
-		assert.isNotExtensible(1);
 	});
 	// Утверждает, если значение не является ложным значением, и выдает, если оно является истинным значением. Это добавлено, чтобы chai мог заменить класс assert узла
 	it('ifError', () => {

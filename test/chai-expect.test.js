@@ -91,6 +91,9 @@ describe('Тесты Chai стиль expect', () => {
 			const f = () => {};
 			expect(f).to.be.a('function');
 		});
+		it('type regexp', () => {
+			expect(/tes/).to.be.a('regexp');
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {

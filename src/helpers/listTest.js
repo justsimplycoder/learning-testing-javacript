@@ -519,6 +519,26 @@ test('type function', () => {
 });
       `
     },
+    {
+      "key": "1:8",
+      "name": "type regexp",
+      "description": "Тип regexp",
+      "expectChai": `
+it('type regexp', () => {
+  expect(/tes/).to.be.a('regexp');
+});
+      `,
+      "assertChai": `
+it('type regexp', () => {
+  assert.typeOf(/tea/, 'regexp');
+});
+      `,
+      "jest": `
+test('type regexp', () => {
+  expect(/tea/).toEqual(expect.any(RegExp));
+});
+      `
+    },
   ]
 },
 {

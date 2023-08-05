@@ -95,6 +95,9 @@ describe('Тесты Chai стиль assert', () => {
 			assert.typeOf(f, 'function');
 			assert.isFunction(f);
 		});
+		it('type regexp', () => {
+			assert.typeOf(/tea/, 'regexp');
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {

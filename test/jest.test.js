@@ -97,6 +97,9 @@ describe('Тесты Jest', () => {
 			expect(typeof f).toBe('function');
 			expect(f).toEqual(expect.any(Function));
 		});
+		test('type regexp', () => {
+			expect(/tea/).toEqual(expect.any(RegExp));
+		});
 	});
 	describe('Разное', () => {
 		test('length', () => {
