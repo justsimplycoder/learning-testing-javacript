@@ -153,6 +153,14 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isSealed(sealedObject);
 			assert.isSealed(frozenObject);
 		});
+		it('extensible Object', () => {
+			let obj = {
+				a: 1
+			};
+			assert.isExtensible(obj);
+			Object.preventExtensions(obj);
+			assert.isNotExtensible(obj);
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

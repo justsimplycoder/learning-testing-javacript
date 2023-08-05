@@ -158,6 +158,14 @@ describe('Тесты Jest', () => {
 			expect(Object.isSealed(sealedObject)).toBe(true);
 			expect(Object.isSealed(frozenObject)).toBe(true);
 		});
+		test('extensible Object', () => {
+			let obj = {
+				a: 1
+			};
+			expect(Object.isExtensible(obj)).toBe(true);
+			Object.preventExtensions(obj);
+			expect(Object.isExtensible(obj)).toBe(false);
+		});
 	});
 	describe('Error', () => {
 		test('throw Error', () => {

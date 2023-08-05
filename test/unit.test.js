@@ -312,21 +312,6 @@ describe('Тесты', () => {
 		expect(1).to.not.be.extensible;
 		assert.isNotExtensible(1);
 	});
-	// Утверждает, что цель запечатана, что означает, что к ней нельзя добавить новые свойства, а ее существующие свойства нельзя перенастроить или удалить. Однако возможно, что его существующие свойства все еще могут быть переназначены другим значениям. Примитивы всегда запечатаны.
-	it('.sealed', () => {
-		let sealedObject = Object.seal({});
-		let frozenObject = Object.freeze({});
-
-		expect(sealedObject).to.be.sealed;
-		assert.isSealed(sealedObject);
-		expect(frozenObject).to.be.sealed;
-		assert.isSealed(frozenObject);
-		expect(1).to.be.sealed;
-		assert.isSealed(1);
-
-		expect({a: 1}).to.not.be.sealed;
-		assert.isNotSealed({a: 1});
-	});
 	// Утверждает, если значение не является ложным значением, и выдает, если оно является истинным значением. Это добавлено, чтобы chai мог заменить класс assert узла
 	it('ifError', () => {
 		try {

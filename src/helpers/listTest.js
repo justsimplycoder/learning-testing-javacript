@@ -785,6 +785,41 @@ test('sealed  Object', () => {
 });
       `
     },
+    {
+      "key": "3:4",
+      "name": "extensible Object",
+      "description": "Объект расширяемый.",
+      "expectChai": `
+it('extensible Object', () => {
+  let obj = {
+    a: 1
+  };
+  expect(obj).to.be.extensible;
+  Object.preventExtensions(obj);
+  expect(obj).to.not.be.extensible;
+});
+      `,
+      "assertChai": `
+it('extensible Object', () => {
+  let obj = {
+    a: 1
+  };
+  assert.isExtensible(obj);
+  Object.preventExtensions(obj);
+  assert.isNotExtensible(obj);
+});
+      `,
+      "jest": `
+test('extensible Object', () => {
+  let obj = {
+    a: 1
+  };
+  expect(Object.isExtensible(obj)).toBe(true);
+  Object.preventExtensions(obj);
+  expect(Object.isExtensible(obj)).toBe(false);
+});
+      `
+    },
   ]
 },
 {

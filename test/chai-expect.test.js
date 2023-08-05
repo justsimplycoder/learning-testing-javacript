@@ -150,6 +150,14 @@ describe('Тесты Chai стиль expect', () => {
 			expect(sealedObject).to.be.sealed;
 			expect(frozenObject).to.be.sealed;
 		});
+		it('extensible Object', () => {
+			let obj = {
+				a: 1
+			};
+			expect(obj).to.be.extensible;
+			Object.preventExtensions(obj);
+			expect(obj).to.not.be.extensible;
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {
