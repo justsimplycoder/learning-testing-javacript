@@ -138,6 +138,11 @@ describe('Тесты Jest', () => {
 			expect({a: 1}).toEqual(expect.any(Object));
 			expect([1, 2, 3]).toEqual(expect.any(Array));
 			expect(() => {}).toEqual(expect.any(Function));
+
+			expect(new Cat).toBeInstanceOf(Cat);
+			expect({a: 1}).toBeInstanceOf(Object);
+			expect([1, 2, 3]).toBeInstanceOf(Array);
+			expect(() => {}).toBeInstanceOf(Function);
 		});
 		test('property Object', () => {
 			const obj = {
