@@ -57,8 +57,6 @@ describe('Тесты', () => {
 	it('.a, typeOf', () => {
 		expect(new Error).to.be.an('error');
 		assert.typeOf(new Error, 'error');
-		expect(Promise.resolve()).to.be.a('promise');
-		assert.typeOf(Promise.resolve(), 'promise');
 		expect(new Float32Array).to.be.a('float32array');
 		assert.typeOf(new Float32Array, 'float32array');
 		expect(Symbol()).to.be.a('symbol');

@@ -94,6 +94,9 @@ describe('Тесты Chai стиль expect', () => {
 		it('type regexp', () => {
 			expect(/tes/).to.be.a('regexp');
 		});
+		it('type promise', () => {
+			expect(Promise.resolve()).to.be.a('promise');
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {

@@ -100,6 +100,9 @@ describe('Тесты Jest', () => {
 		test('type regexp', () => {
 			expect(/tea/).toEqual(expect.any(RegExp));
 		});
+		test('type promise', () => {
+			expect(Promise.resolve()).toEqual(expect.any(Promise));
+		});
 	});
 	describe('Разное', () => {
 		test('length', () => {

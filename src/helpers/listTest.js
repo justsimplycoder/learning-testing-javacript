@@ -539,6 +539,26 @@ test('type regexp', () => {
 });
       `
     },
+    {
+      "key": "1:9",
+      "name": "type promise",
+      "description": "Тип promise",
+      "expectChai": `
+it('type promise', () => {
+  expect(Promise.resolve()).to.be.a('promise');
+});
+      `,
+      "assertChai": `
+it('type promise', () => {
+  assert.typeOf(Promise.resolve(), 'promise');
+});
+      `,
+      "jest": `
+test('type promise', () => {
+  expect(Promise.resolve()).toEqual(expect.any(Promise));
+});
+      `
+    },
   ]
 },
 {

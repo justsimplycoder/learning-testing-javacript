@@ -98,6 +98,9 @@ describe('Тесты Chai стиль assert', () => {
 		it('type regexp', () => {
 			assert.typeOf(/tea/, 'regexp');
 		});
+		it('type promise', () => {
+			assert.typeOf(Promise.resolve(), 'promise');
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {
