@@ -53,22 +53,6 @@ describe('Тесты', () => {
 		expect({a: 1, b: 2}).to.have.all.keys('a', 'b');
 		assert.hasAllKeys({a: 1, b: 2}, ['a', 'b']);
 	});
-	// Утверждает, что целевой тип равен заданному строковому типу. Типы нечувствительны к регистру.
-	it('.a, typeOf', () => {
-		expect(new Error).to.be.an('error');
-		assert.typeOf(new Error, 'error');
-		expect(new Float32Array).to.be.a('float32array');
-		assert.typeOf(new Float32Array, 'float32array');
-		expect(Symbol()).to.be.a('symbol');
-		assert.typeOf(Symbol(), 'symbol');
-
-		var myObj = {
-			[Symbol.toStringTag]: 'myCustomType'
-		};
-		expect(myObj).to.be.a('myCustomType').but.not.an('object');
-		assert.typeOf(myObj, 'myCustomType');
-		assert.notTypeOf(myObj, 'object');
-	});
 	// Когда целью является строка, .include утверждает, что данная строка val является подстрокой цели.
 	it('.include', () => {
 		expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});

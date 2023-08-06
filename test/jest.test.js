@@ -103,6 +103,12 @@ describe('Тесты Jest', () => {
 		test('type promise', () => {
 			expect(Promise.resolve()).toEqual(expect.any(Promise));
 		});
+		test('type myCustomType', () => {
+			const myObj = {
+				[Symbol.toStringTag]: 'myCustomType'
+			};
+			expect(Object.prototype.toString.call(myObj)).toBe('[object myCustomType]');
+		});
 	});
 	describe('Разное', () => {
 		test('length', () => {

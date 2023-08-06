@@ -97,6 +97,12 @@ describe('Тесты Chai стиль expect', () => {
 		it('type promise', () => {
 			expect(Promise.resolve()).to.be.a('promise');
 		});
+		it('type myCustomType', () => {
+			const myObj = {
+				[Symbol.toStringTag]: 'myCustomType'
+			};
+			expect(myObj).to.be.a('myCustomType');
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {

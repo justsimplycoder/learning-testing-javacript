@@ -559,6 +559,35 @@ test('type promise', () => {
 });
       `
     },
+    {
+      "key": "1:10",
+      "name": "custom type",
+      "description": "Тип пользовательский",
+      "expectChai": `
+it('type myCustomType', () => {
+  const myObj = {
+    [Symbol.toStringTag]: 'myCustomType'
+  };
+  expect(myObj).to.be.a('myCustomType');
+});
+      `,
+      "assertChai": `
+it('type myCustomType', () => {
+  const myObj = {
+    [Symbol.toStringTag]: 'myCustomType'
+  };
+  assert.typeOf(myObj, 'myCustomType');
+});
+      `,
+      "jest": `
+test('type myCustomType', () => {
+  const myObj = {
+    [Symbol.toStringTag]: 'myCustomType'
+  };
+  expect(Object.prototype.toString.call(myObj)).toBe('[object myCustomType]');
+});
+      `
+    },
   ]
 },
 {

@@ -101,6 +101,12 @@ describe('Тесты Chai стиль assert', () => {
 		it('type promise', () => {
 			assert.typeOf(Promise.resolve(), 'promise');
 		});
+		it('type myCustomType', () => {
+			const myObj = {
+				[Symbol.toStringTag]: 'myCustomType'
+			};
+			assert.typeOf(myObj, 'myCustomType');
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {
