@@ -273,14 +273,6 @@ describe('Тесты', () => {
 
 		expect(addTwo).to.increase(myObj, 'val').by(2);
 	});
-	// Утверждает, если значение не является ложным значением, и выдает, если оно является истинным значением. Это добавлено, чтобы chai мог заменить класс assert узла
-	it('ifError', () => {
-		try {
-			var err = new Error('I am a custom error');
-		} catch (err) {
-			assert.ifError(err);
-		}
-	});
 	// Утверждает, что целью является число, а не NaN или положительная/отрицательная бесконечность.
 	it('.fail', () => {
 		expect.fail();
