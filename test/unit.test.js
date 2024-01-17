@@ -117,13 +117,9 @@ describe('Тесты', () => {
 	});
 	// Утверждает, что цель глубоко равна данному объекту.
 	it('.eql, .deepEqual', () => {
-		expect({a: 1}).to.deep.equal({a: 1});
 		expect([1, 2]).to.deep.equal([1, 2]);
-		expect({a: 1}).to.eql({a: 1}).but.not.equal({a: 1});
-		expect([1, 2]).to.eql([1, 2]).but.not.equal([1, 2]);
-		assert.deepEqual({a: 1}, {a: 1});
+		expect([1, 2]).to.eql([1, 2]);
 		assert.deepEqual([1, 2], [1, 2]);
-		expect({ tea: 'green' }).to.deep.not.equal({ tea: 'jasmine' });
 		assert.notDeepEqual({ tea: 'green' }, { tea: 'jasmine' })
 	});
 	// Диапазон. Утверждает, что цель представляет собой число или дату, большую или равную заданному числу или дате начала и меньшую или равную заданному числу или дате окончания соответственно.

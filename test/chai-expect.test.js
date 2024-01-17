@@ -177,6 +177,16 @@ describe('Тесты Chai стиль expect', () => {
 			Object.preventExtensions(obj);
 			expect(obj).to.not.be.extensible;
 		});
+		it('equal', () => {
+			expect({a: 1}).to.eql({a: 1});
+			expect({a: 1}).to.deep.equal({a: 1});
+			expect({a: 1, b: {x: 1, y: 2}}).to.eql({a: 1, b: {x: 1, y: 2}});
+			expect({a: 1, b: {x: 1, y: 2}}).to.deep.equal({a: 1, b: {x: 1, y: 2}});
+			expect({a: 1}).to.not.eql({a: 2});
+			expect({a: 1}).to.deep.not.equal({a: 2});
+			expect({a: 1}).to.not.eql({a: 1, b: 2});
+			expect({a: 1}).to.deep.not.equal({a: 1, b: 2});
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

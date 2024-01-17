@@ -912,6 +912,39 @@ test('extensible Object', () => {
 });
       `
     },
+    {
+      "key": "3:5",
+      "name": "equal",
+      "description": "Утверждает, что данные объектов равны.",
+      "expectChai": `
+it('equal', () => {
+  expect({a: 1}).to.eql({a: 1});
+  expect({a: 1}).to.deep.equal({a: 1});
+  expect({a: 1, b: {x: 1, y: 2}}).to.eql({a: 1, b: {x: 1, y: 2}});
+  expect({a: 1, b: {x: 1, y: 2}}).to.deep.equal({a: 1, b: {x: 1, y: 2}});
+  expect({a: 1}).to.not.eql({a: 2});
+  expect({a: 1}).to.deep.not.equal({a: 2});
+  expect({a: 1}).to.not.eql({a: 1, b: 2});
+  expect({a: 1}).to.deep.not.equal({a: 1, b: 2});
+});
+      `,
+      "assertChai": `
+it('equal', () => {
+  assert.deepEqual({a: 1}, {a: 1});
+  assert.deepEqual({a: 1, b: {x: 1, y: 2}}, {a: 1, b: {x: 1, y: 2}});
+  assert.notDeepEqual({a: 1}, {a: 2});
+  assert.notDeepEqual({a: 1}, {a: 1, b: 2});
+});
+      `,
+      "jest": `
+test('equal', () => {
+  expect({a: 1}).toEqual({a: 1});
+  expect({a: 1, b: {x: 1, y: 2}}).toEqual({a: 1, b: {x: 1, y: 2}});
+  expect({a: 1}).not.toEqual({a: 1, b: 2});
+  expect({a: 1}).not.toEqual({a: 2});
+});
+      `
+    },
   ]
 },
 {

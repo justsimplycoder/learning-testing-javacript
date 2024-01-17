@@ -183,6 +183,12 @@ describe('Тесты Jest', () => {
 			Object.preventExtensions(obj);
 			expect(Object.isExtensible(obj)).toBe(false);
 		});
+		test('equal', () => {
+			expect({a: 1}).toEqual({a: 1});
+			expect({a: 1, b: {x: 1, y: 2}}).toEqual({a: 1, b: {x: 1, y: 2}});
+			expect({a: 1}).not.toEqual({a: 1, b: 2});
+			expect({a: 1}).not.toEqual({a: 2});
+		});
 	});
 	describe('Error', () => {
 		test('throw Error', () => {

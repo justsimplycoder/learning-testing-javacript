@@ -179,6 +179,12 @@ describe('Тесты Chai стиль assert', () => {
 			Object.preventExtensions(obj);
 			assert.isNotExtensible(obj);
 		});
+		it('equal', () => {
+			assert.deepEqual({a: 1}, {a: 1});
+			assert.deepEqual({a: 1, b: {x: 1, y: 2}}, {a: 1, b: {x: 1, y: 2}});
+			assert.notDeepEqual({a: 1}, {a: 2});
+			assert.notDeepEqual({a: 1}, {a: 1, b: 2});
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {
