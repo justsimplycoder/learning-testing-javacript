@@ -689,6 +689,29 @@ it('array include', () => {
 });
       `
     },
+    {
+      "key": "2:4",
+      "name": "close to",
+      "description": "Утверждает что число, которое находится в заданном диапазоне +/- дельта от заданного ожидаемого числа.",
+      "expectChai": `
+it('close to', () => {
+  expect(1.5).to.be.closeTo(1, 0.5);
+  expect(1.5).to.be.closeTo(2, 0.5);
+  expect(1.5).to.be.closeTo(1, 1);
+  expect(1.5).to.be.closeTo(1, 3);
+  expect(1.5).to.not.be.closeTo(1, 0.4);
+});
+      `,
+      "assertChai": `
+it('close to', () => {
+  assert.closeTo(1.5, 1, 0.5);
+  assert.closeTo(1.5, 2, 0.5);
+  assert.closeTo(1.5, 1, 1);
+  assert.closeTo(1.5, 1, 3);
+});
+      `,
+      "jest": undefined
+    },
   ]
 },
 {

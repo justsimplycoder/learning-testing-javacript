@@ -125,6 +125,12 @@ describe('Тесты Chai стиль assert', () => {
 			assert.include([1, 2, 3], 2);
 			assert.oneOf(1, [1, 2, 3]);
 		});
+		it('close to', () => {
+			assert.closeTo(1.5, 1, 0.5);
+			assert.closeTo(1.5, 2, 0.5);
+			assert.closeTo(1.5, 1, 1);
+			assert.closeTo(1.5, 1, 3);
+		});
 	});
 	describe('Объекты', () => {
 		it('new Obj instanceof Obj', () => {
