@@ -122,15 +122,6 @@ describe('Тесты', () => {
 		assert.deepEqual([1, 2], [1, 2]);
 		assert.notDeepEqual({ tea: 'green' }, { tea: 'jasmine' })
 	});
-	// Диапазон. Утверждает, что цель представляет собой число или дату, большую или равную заданному числу или дате начала и меньшую или равную заданному числу или дате окончания соответственно.
-	it('.within', () => {
-		expect(2).to.equal(2);
-		expect(2).to.be.within(1, 3);
-		expect(2).to.be.within(2, 3);
-		expect(2).to.be.within(1, 2);
-		expect('foo').to.have.lengthOf.within(2, 4);
-		expect([1, 2, 3]).to.have.lengthOf.within(2, 4);
-	});
 	// Утверждает, что цель имеет собственный дескриптор свойства с заданным именем ключа. Перечислимые и неперечислимые свойства включаются в поиск.
 	it('.ownPropertyDescriptor', () => {
 		expect({a: 1}).to.have.ownPropertyDescriptor('a');

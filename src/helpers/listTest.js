@@ -327,6 +327,22 @@ test('x <= y', () => {
 });
       `
     },
+    {
+      "key": "0:14",
+      "name": "x <= z <= y",
+      "description": "Диапазон.",
+      "expectChai": `
+it('x <= z <= y', () => {
+  expect(2).to.be.within(1, 3);
+  expect(2).to.be.within(2, 3);
+  expect(2).to.be.within(1, 2);
+  expect('foo').to.have.lengthOf.within(2, 4);
+  expect([1, 2, 3]).to.have.lengthOf.within(2, 4);
+});
+      `,
+      "assertChai": undefined,
+      "jest": undefined
+    },
   ]
 },
 {

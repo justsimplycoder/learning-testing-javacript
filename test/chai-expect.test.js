@@ -60,6 +60,13 @@ describe('Тесты Chai стиль expect', () => {
 			expect(10).to.be.at.most(11);
 			expect(11).to.be.at.most(11);
 		});
+		it('x <= z <= y', () => {
+			expect(2).to.be.within(1, 3);
+			expect(2).to.be.within(2, 3);
+			expect(2).to.be.within(1, 2);
+			expect('foo').to.have.lengthOf.within(2, 4);
+			expect([1, 2, 3]).to.have.lengthOf.within(2, 4);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {
