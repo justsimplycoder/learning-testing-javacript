@@ -1,4 +1,8 @@
-const {expect} = require('chai');
+const chai = require('chai');
+const chaiAlmost = require('chai-almost');
+
+chai.use(chaiAlmost());
+const expect = chai.expect;
 
 describe('Тесты Chai стиль expect', () => {
 	describe('Примитивные значения', () => {
@@ -66,6 +70,11 @@ describe('Тесты Chai стиль expect', () => {
 			expect(2).to.be.within(1, 2);
 			expect('foo').to.have.lengthOf.within(2, 4);
 			expect([1, 2, 3]).to.have.lengthOf.within(2, 4);
+		});
+		it('float x === float y', () => {
+			const value = 0.1 + 0.2;
+			expect(value).to.be.closeTo(0.3, 0.0000000001);
+			expect(value).to.almost.equal(0.3); // расширение chai-almost
 		});
 	});
 	describe('Проверка типов', () => {

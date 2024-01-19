@@ -61,6 +61,10 @@ describe('Тесты Jest', () => {
 			expect(10).toBeLessThanOrEqual(11);
 			expect(11).toBeLessThanOrEqual(11);
 		});
+		test('float x === float y', () => {
+			const value = 0.1 + 0.2;
+			expect(value).toBeCloseTo(0.3);
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

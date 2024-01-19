@@ -59,6 +59,10 @@ describe('Тесты Chai стиль assert', () => {
 			assert.isAtMost(10, 11);
 			assert.isAtMost(11, 11);
 		});
+		it('float x === float y', () => {
+			const value = 0.1 + 0.2;
+			assert.closeTo(value, 0.3, 0.0000000001);
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

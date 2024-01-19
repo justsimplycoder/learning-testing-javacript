@@ -343,6 +343,31 @@ it('x <= z <= y', () => {
       "assertChai": undefined,
       "jest": undefined
     },
+    {
+      "key": "0:15",
+      "name": "float x === float y",
+      "description": "Сравнение чисел с плавающей точкой.",
+      "expectChai": `
+it('float x === float y', () => {
+  const value = 0.1 + 0.2;
+  expect(value).to.be.closeTo(0.3, 0.0000000001);
+  expect(value).to.almost.equal(0.3); // расширение chai-almost
+});
+      `,
+      "assertChai": `
+it('float x === float y', () => {
+  const value = 0.1 + 0.2;
+  assert.closeTo(value, 0.3, 0.0000000001);
+});
+      `,
+      "jest": `
+test('float x === float y', () => {
+  const value = 0.1 + 0.2;
+  expect(value).toBeCloseTo(0.3);
+});
+      `
+    },
+
   ]
 },
 {
