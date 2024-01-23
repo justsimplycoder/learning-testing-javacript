@@ -133,6 +133,7 @@ describe('Тесты Jest', () => {
 		});
 		it('array include', () => {
 			expect([1, 2, 3]).toContain(2);
+			expect([1, [2, 3]]).toContainEqual([2, 3]);
 		});
 	});
 	describe('Объекты', () => {

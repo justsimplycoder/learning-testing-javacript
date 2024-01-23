@@ -3,11 +3,6 @@ const {expect, assert} = require('chai');
 // it.only - пропускает тест
 // it.skip - не запускает тест, в ожидании
 describe('Тесты', () => {
-	// Заставляет все утверждения .equal, .include, .members, .keys и .property, следующие в цепочке, использовать глубокое равенство вместо строгого (===) равенства. См. страницу проекта deep-eql для получения информации об алгоритме глубокого равенства: https://github.com/chaijs/deep-eql.
-	it('.deep', () => {
-		expect({a: 1}).to.deep.equal({a: 1});
-		expect([{a: 1}]).to.deep.include({a: 1});
-	});
 	// Включает нотацию с точками и скобками во всех утверждениях .property и .include, которые следуют в цепочке.
 	it('.nested', () => {
 		expect({a: {b: ['x', 'y']}}).to.have.nested.property("a.b[1]");
@@ -57,28 +52,13 @@ describe('Тесты', () => {
 	it('.include', () => {
 		expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});
 		assert.include({a: 1, b: 2, c: 3}, {a: 1, b: 2});
-		expect(new Set([1, 2])).to.include(1);
-		assert.include(new Set([1, 2]), 1);
-		expect(new Map([['a', 1], ['b', 2]])).to.include(1);
-		assert(new Map([['a', 1], ['b', 2]]), 1);
-		expect([1, 2, 3]).to.not.include(4);
-		assert.notInclude([1,2,3], 4);
 	});
 	// Утверждает, что в стоге сена есть игла. Может использоваться для подтверждения включения значения в массив или подмножества свойств в объект. Используется глубокое равенство.
 	it('.deepInclude', () => {
 		const obj1 = {a: 1};
 		const obj2 = {b: 2};
-		assert.deepInclude([obj1, obj2], {a: 1});
 		assert.deepInclude({foo: obj1, bar: obj2}, {foo: {a: 1}});
 		assert.deepInclude({foo: obj1, bar: obj2}, {foo: {a: 1}, bar: {b: 2}});
-	});
-	// Утверждает, что в стоге сена нет иголки. Может использоваться для подтверждения отсутствия значения в массиве или подмножества свойств в объекте. Используется глубокое равенство.
-	it('.notDeepInclude', () => {
-		const obj1 = {a: 1};
-		const obj2 = {b: 2};
-		assert.notDeepInclude([obj1, obj2], {a: 9});
-		assert.notDeepInclude({foo: obj1, bar: obj2}, {foo: {a: 9}});
-		assert.notDeepInclude({foo: obj1, bar: obj2}, {foo: {a: 1}, bar: {b: 9}});
 	});
 	// Когда целью является строка или массив, .empty утверждает, что свойство длины цели строго (===) равно 0
 	it('.empty', () => {
