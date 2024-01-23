@@ -986,6 +986,33 @@ test('equal', () => {
 });
       `
     },
+    {
+      "key": "3:6",
+      "name": "object include",
+      "description": "Утверждает что элемент присутствует в объекте.",
+      "expectChai": `
+it('object include', () => {
+  expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});
+  expect({a: 1, b: {x: 2, y: 3}}).to.deep.include({b: {x: 2, y: 3}});
+});
+      `,
+      "assertChai": `
+it('object include', () => {
+  assert.include({a: 1, b: 2, c: 3}, {a: 1, b: 2});
+  assert.deepInclude({a: 1, b: {x: 2, y: 3}}, {b: {x: 2, y: 3}});
+});
+      `,
+      "jest": `
+it('object include', () => {
+  expect({a: 1, b: 2, c: 3}).toEqual(
+    expect.objectContaining({a: 1, b: 2})
+  );
+  expect({a: 1, b: {x: 2, y: 3}}).toEqual(
+    expect.objectContaining({b: {x: 2, y: 3}})
+  );
+});
+      `
+    },
   ]
 },
 {

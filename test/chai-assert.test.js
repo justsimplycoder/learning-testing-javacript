@@ -190,6 +190,10 @@ describe('Тесты Chai стиль assert', () => {
 			assert.notDeepEqual({a: 1}, {a: 2});
 			assert.notDeepEqual({a: 1}, {a: 1, b: 2});
 		});
+		it('object include', () => {
+			assert.include({a: 1, b: 2, c: 3}, {a: 1, b: 2});
+			assert.deepInclude({a: 1, b: {x: 2, y: 3}}, {b: {x: 2, y: 3}});
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

@@ -48,18 +48,6 @@ describe('Тесты', () => {
 		expect({a: 1, b: 2}).to.have.all.keys('a', 'b');
 		assert.hasAllKeys({a: 1, b: 2}, ['a', 'b']);
 	});
-	// Когда целью является строка, .include утверждает, что данная строка val является подстрокой цели.
-	it('.include', () => {
-		expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});
-		assert.include({a: 1, b: 2, c: 3}, {a: 1, b: 2});
-	});
-	// Утверждает, что в стоге сена есть игла. Может использоваться для подтверждения включения значения в массив или подмножества свойств в объект. Используется глубокое равенство.
-	it('.deepInclude', () => {
-		const obj1 = {a: 1};
-		const obj2 = {b: 2};
-		assert.deepInclude({foo: obj1, bar: obj2}, {foo: {a: 1}});
-		assert.deepInclude({foo: obj1, bar: obj2}, {foo: {a: 1}, bar: {b: 2}});
-	});
 	// Когда целью является строка или массив, .empty утверждает, что свойство длины цели строго (===) равно 0
 	it('.empty', () => {
 		expect([]).to.be.empty;

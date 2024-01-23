@@ -204,6 +204,10 @@ describe('Тесты Chai стиль expect', () => {
 			expect({a: 1}).to.not.eql({a: 1, b: 2});
 			expect({a: 1}).to.deep.not.equal({a: 1, b: 2});
 		});
+		it('object include', () => {
+			expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});
+			expect({a: 1, b: {x: 2, y: 3}}).to.deep.include({b: {x: 2, y: 3}});
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {
