@@ -717,16 +717,21 @@ it('string include', () => {
       "expectChai": `
 it('array include', () => {
   expect([1, 2, 3]).to.include(2);
+  expect(1).to.be.oneOf([1, 2, 3]);
+  expect([1, [2, 3]]).to.deep.include([2, 3]);
 });
       `,
       "assertChai": `
 it('array include', () => {
   assert.include([1, 2, 3], 2);
+  assert.oneOf(1, [1, 2, 3]);
+  assert.deepInclude([1, [2, 3]], [2, 3]);
 });
       `,
       "jest": `
 it('array include', () => {
   expect([1, 2, 3]).toContain(2);
+  expect([1, [2, 3]]).toContainEqual([2, 3]);
 });
       `
     },

@@ -127,8 +127,8 @@ describe('Тесты Chai стиль assert', () => {
 		});
 		it('array include', () => {
 			assert.include([1, 2, 3], 2);
-			assert.deepInclude([1, [2, 3]], [2, 3]);
 			assert.oneOf(1, [1, 2, 3]);
+			assert.deepInclude([1, [2, 3]], [2, 3]);
 		});
 		it('close to', () => {
 			assert.closeTo(1.5, 1, 0.5);
