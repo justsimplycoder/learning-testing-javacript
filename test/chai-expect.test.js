@@ -146,6 +146,11 @@ describe('Тесты Chai стиль expect', () => {
 			expect(1.5).to.be.closeTo(1, 3);
 			expect(1.5).to.not.be.closeTo(1, 0.4);
 		});
+		it('arguments function', () => {
+			(function () {
+				expect(arguments).to.be.arguments;
+			})();
+		});
 	});
 	describe('Объекты', () => {
 		it('new Obj instanceof Obj', () => {

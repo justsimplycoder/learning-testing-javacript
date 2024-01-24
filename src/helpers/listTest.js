@@ -758,6 +758,26 @@ it('close to', () => {
       `,
       "jest": undefined
     },
+    {
+      "key": "2:5",
+      "name": "arguments function",
+      "description": "Утверждает, что целью является объект arguments.",
+      "expectChai": `
+it('arguments function', () => {
+  (function () {
+    expect(arguments).to.be.arguments;
+  })();
+});
+      `,
+      "assertChai": `
+it('arguments function', () => {
+  (function () {
+    assert.typeOf(arguments, 'arguments');
+  })();
+});
+      `,
+      "jest": undefined
+    },
   ]
 },
 {

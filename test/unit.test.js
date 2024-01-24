@@ -67,12 +67,6 @@ describe('Тесты', () => {
 		assert.isArray([]);
 		assert.isEmpty([]);
 	});
-	// Утверждает, что целью является объект arguments.
-	it('.arguments', () => {
-		(function () {
-			expect(arguments).to.be.arguments;
-		})();
-	});
 	// Утверждает, что цель строго (===) равна заданному значению.
 	it('.equal, .strictEqual, .deepEqual', () => {1
 		expect(1).to.equal(1);

@@ -136,6 +136,11 @@ describe('Тесты Chai стиль assert', () => {
 			assert.closeTo(1.5, 1, 1);
 			assert.closeTo(1.5, 1, 3);
 		});
+		it('arguments function', () => {
+			(function () {
+				assert.typeOf(arguments, 'arguments');
+			})();
+		});
 	});
 	describe('Объекты', () => {
 		it('new Obj instanceof Obj', () => {
