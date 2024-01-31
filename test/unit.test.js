@@ -86,15 +86,9 @@ describe('Тесты', () => {
 	});
 	// Утверждает, что целевой объект, массив, карта или набор имеют заданные ключи. В поиск включаются только собственные унаследованные свойства цели.
 	it('.keys', () => {
-		expect({a: 1, b: 2}).to.have.all.keys('a', 'b');
 		expect(['x', 'y']).to.have.all.keys(0, 1);
-		expect({a: 1, b: 2}).to.have.all.keys(['a', 'b']);
 		expect(['x', 'y']).to.have.all.keys([0, 1]);
-		expect({a: 1, b: 2}).to.have.all.keys({a: 4, b: 5}); // ignore 4 and 5
 		expect(['x', 'y']).to.have.all.keys({0: 4, 1: 5}); // ignore 4 and 5
-		expect(new Map([['a', 1], ['b', 2]])).to.have.all.keys('a', 'b');
-		expect(new Set(['a', 'b'])).to.have.all.keys('a', 'b');
-		expect({a: 1, b: 2}).to.be.an('object').that.has.all.keys('a', 'b');
 	});
 	// Когда цель не является функциональным объектом, .respondTo утверждает, что у цели есть метод с данным методом имени. Метод может быть собственным или унаследованным, и он может быть перечисляемым или неперечисляемым.
 	it('.respondTo', () => {

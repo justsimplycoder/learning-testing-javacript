@@ -1066,6 +1066,39 @@ test('getOwnPropertyDescriptors', () => {
 });
       `
     },
+    {
+      "key": "3:8",
+      "name": "keys",
+      "description": "Утверждает, что целевой объект имеет заданные ключи.",
+      "expectChai": `
+it('keys', () => {
+  expect({a: 1, b: 2}).to.have.any.keys('a');
+  expect({a: 1, b: 2}).to.have.all.keys('a', 'b');
+  expect({a: 1, b: 2}).to.have.all.keys(['a', 'b']);
+  expect({a: 1, b: 2}).to.have.all.keys({a: 4, b: 5}); // ignore 4 and 5
+});
+      `,
+      "assertChai": `
+it('keys', () => {
+  assert.hasAnyKeys({a: 1, b: 2}, ['a']);
+  assert.hasAllKeys({a: 1, b: 2}, ['a', 'b']);
+  assert.hasAllKeys({a: 1, b: 2}, {a: 4, b: 5}); // ignore 4 and 5
+});
+      `,
+      "jest": `
+test('keys', () => {
+  expect({a: 1, b: 2}).toHaveProperty('a');
+  expect(Object.keys({a: 1, b: 2})).toEqual(expect.arrayContaining(['a', 'b']));
+  expect({a: 1, b: 2}).toMatchObject(expect.objectContaining({
+    a: expect.any(Number),
+    b: expect.any(Number),
+  }));
+  expect(Object.keys({a: 1, b: 2})).toEqual(expect.arrayContaining(
+    Object.keys({a: 3, b: 4})
+  ));
+});
+      `
+    },
   ]
 },
 {

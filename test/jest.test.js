@@ -212,6 +212,17 @@ describe('Тесты Jest', () => {
 				}
 			});
 		});
+		test('keys', () => {
+			expect({a: 1, b: 2}).toHaveProperty('a');
+			expect(Object.keys({a: 1, b: 2})).toEqual(expect.arrayContaining(['a', 'b']));
+			expect({a: 1, b: 2}).toMatchObject(expect.objectContaining({
+				a: expect.any(Number),
+				b: expect.any(Number),
+			}));
+			expect(Object.keys({a: 1, b: 2})).toEqual(expect.arrayContaining(
+				Object.keys({a: 3, b: 4})
+			));
+		});
 	});
 	describe('Error', () => {
 		test('throw Error', () => {

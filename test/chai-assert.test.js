@@ -199,6 +199,11 @@ describe('Тесты Chai стиль assert', () => {
 			assert.include({a: 1, b: 2, c: 3}, {a: 1, b: 2});
 			assert.deepInclude({a: 1, b: {x: 2, y: 3}}, {b: {x: 2, y: 3}});
 		});
+		it('keys', () => {
+			assert.hasAnyKeys({a: 1, b: 2}, ['a']);
+			assert.hasAllKeys({a: 1, b: 2}, ['a', 'b']);
+			assert.hasAllKeys({a: 1, b: 2}, {a: 4, b: 5}); // ignore 4 and 5
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {
