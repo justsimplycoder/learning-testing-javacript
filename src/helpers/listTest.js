@@ -1038,6 +1038,34 @@ it('object include', () => {
 });
       `
     },
+    {
+      "key": "3:7",
+      "name": "getOwnPropertyDescriptors",
+      "description": "Утверждает, что цель имеет собственный дескриптор свойства с заданным именем ключа.",
+      "expectChai": `
+it('getOwnPropertyDescriptors', () => {
+  expect({a: 1}).to.have.ownPropertyDescriptor('a', {
+    configurable: true,
+    enumerable: true,
+    writable: true,
+    value: 1,
+  });
+});
+      `,
+      "assertChai": undefined,
+      "jest": `
+test('getOwnPropertyDescriptors', () => {
+  expect(Object.getOwnPropertyDescriptors({a: 1})).toMatchObject({
+    a: {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: 1,
+    }
+  });
+});
+      `
+    },
   ]
 },
 {

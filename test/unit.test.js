@@ -84,16 +84,6 @@ describe('Тесты', () => {
 		assert.deepEqual([1, 2], [1, 2]);
 		assert.notDeepEqual({ tea: 'green' }, { tea: 'jasmine' })
 	});
-	// Утверждает, что цель имеет собственный дескриптор свойства с заданным именем ключа. Перечислимые и неперечислимые свойства включаются в поиск.
-	it('.ownPropertyDescriptor', () => {
-		expect({a: 1}).to.have.ownPropertyDescriptor('a');
-		expect({a: 1}).to.have.ownPropertyDescriptor('a', {
-			configurable: true,
-			enumerable: true,
-			writable: true,
-			value: 1,
-		});
-	});
 	// Утверждает, что целевой объект, массив, карта или набор имеют заданные ключи. В поиск включаются только собственные унаследованные свойства цели.
 	it('.keys', () => {
 		expect({a: 1, b: 2}).to.have.all.keys('a', 'b');

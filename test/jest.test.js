@@ -194,13 +194,23 @@ describe('Тесты Jest', () => {
 			expect({a: 1}).not.toEqual({a: 1, b: 2});
 			expect({a: 1}).not.toEqual({a: 2});
 		});
-		it('object include', () => {
+		test('object include', () => {
 			expect({a: 1, b: 2, c: 3}).toEqual(
 				expect.objectContaining({a: 1, b: 2})
 			);
 			expect({a: 1, b: {x: 2, y: 3}}).toEqual(
 				expect.objectContaining({b: {x: 2, y: 3}})
 			);
+		});
+		test('getOwnPropertyDescriptors', () => {
+			expect(Object.getOwnPropertyDescriptors({a: 1})).toMatchObject({
+				a: {
+					configurable: true,
+					enumerable: true,
+					writable: true,
+					value: 1,
+				}
+			});
 		});
 	});
 	describe('Error', () => {

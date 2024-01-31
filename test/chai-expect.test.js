@@ -213,6 +213,14 @@ describe('Тесты Chai стиль expect', () => {
 			expect({a: 1, b: 2, c: 3}).to.include({a: 1, b: 2});
 			expect({a: 1, b: {x: 2, y: 3}}).to.deep.include({b: {x: 2, y: 3}});
 		});
+		it('getOwnPropertyDescriptors', () => {
+			expect({a: 1}).to.have.ownPropertyDescriptor('a', {
+				configurable: true,
+				enumerable: true,
+				writable: true,
+				value: 1,
+			});
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {
