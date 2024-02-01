@@ -32,15 +32,6 @@ describe('Тесты', () => {
 		expect([1, 2, 3]).to.include.ordered.members([1, 2])
 			.but.not.include.ordered.members([2, 3]);
 	});
-	// Когда целью является строка или массив, .empty утверждает, что свойство длины цели строго (===) равно 0
-	it('.empty', () => {
-		expect({}).to.be.empty;
-		expect([]).to.be.empty;
-		expect('').to.be.empty;
-		assert.isEmpty({});
-		assert.isEmpty([]);
-		assert.isEmpty('');
-	});
 	// Утверждает, что цель глубоко равна данному объекту.
 	it('.eql, .deepEqual', () => {
 		expect([1, 2]).to.deep.equal([1, 2]);

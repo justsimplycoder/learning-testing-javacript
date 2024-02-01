@@ -65,6 +65,11 @@ describe('Тесты Jest', () => {
 			const value = 0.1 + 0.2;
 			expect(value).toBeCloseTo(0.3);
 		});
+		test('empty', () => {
+			expect({}).toEqual({});
+			expect([]).toEqual([]);
+			expect('').toEqual('');
+		});
 	});
 	describe('Проверка типов', () => {
 		test('type string', () => {

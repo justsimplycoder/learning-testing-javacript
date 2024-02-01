@@ -367,7 +367,32 @@ test('float x === float y', () => {
 });
       `
     },
-
+    {
+      "key": "0:16",
+      "name": "empty",
+      "description": "Утверждает что массив, объект или строка являются пустыми",
+      "expectChai": `
+it('empty', () => {
+  expect({}).to.be.empty;
+  expect([]).to.be.empty;
+  expect('').to.be.empty;
+});
+      `,
+      "assertChai": `
+it('empty', () => {
+  assert.isEmpty({});
+  assert.isEmpty([]);
+  assert.isEmpty('');
+});
+      `,
+      "jest": `
+test('empty', () => {
+  expect({}).toEqual({});
+  expect([]).toEqual([]);
+  expect('').toEqual('');
+});
+      `
+    },
   ]
 },
 {

@@ -63,6 +63,11 @@ describe('Тесты Chai стиль assert', () => {
 			const value = 0.1 + 0.2;
 			assert.closeTo(value, 0.3, 0.0000000001);
 		});
+		it('empty', () => {
+			assert.isEmpty({});
+			assert.isEmpty([]);
+			assert.isEmpty('');
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {

@@ -76,6 +76,11 @@ describe('Тесты Chai стиль expect', () => {
 			expect(value).to.be.closeTo(0.3, 0.0000000001);
 			expect(value).to.almost.equal(0.3); // расширение chai-almost
 		});
+		it('empty', () => {
+			expect({}).to.be.empty;
+			expect([]).to.be.empty;
+			expect('').to.be.empty;
+		});
 	});
 	describe('Проверка типов', () => {
 		it('type string', () => {
