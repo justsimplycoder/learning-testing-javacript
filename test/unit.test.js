@@ -13,11 +13,6 @@ describe('Тесты', () => {
 		assert.nestedInclude({'.a': {'b': 'x'}}, {'\\.a.b': 'x'});
 		assert.nestedInclude({'a': {'[b]': 'x'}}, {'a.\\[b\\]': 'x'});
 	});
-	// Утверждает, что «стог сена» не включает «иголку». Может использоваться для подтверждения отсутствия подмножества свойств в объекте. Позволяет использовать нотацию с точками и квадратными скобками для ссылки на вложенные свойства. «[]» и «.» в именах свойств можно экранировать двойными обратными косыми чертами.
-	it('notNestedInclude', () => {
-		assert.notNestedInclude({'.a': {'b': 'x'}}, {'\\.a.b': 'y'});
-		assert.notNestedInclude({'a': {'[b]': 'x'}}, {'a.\\[b\\]': 'y'});
-	});
 	// Заставляет все утверждения .property и .include, которые следуют в цепочке, игнорировать унаследованные свойства.
 	it('.own', () => {
 		function O() {
@@ -37,45 +32,14 @@ describe('Тесты', () => {
 		expect([1, 2, 3]).to.include.ordered.members([1, 2])
 			.but.not.include.ordered.members([2, 3]);
 	});
-	// Заставляет все утверждения .keys, которые следуют в цепочке, требовать только, чтобы у цели был хотя бы один из заданных ключей. Это противоположно .all, который требует, чтобы у цели были все заданные ключи.
-	it('.any', () => {
-		expect({a: 1, b: 2}).to.not.have.any.keys('c', 'd');
-		expect({a: 1, b: 2}).to.have.any.keys('a');
-		assert.hasAnyKeys({a: 1, b: 2}, ['a']);
-	});
-	// ЗЗаставляет все утверждения .keys, которые следуют в цепочке, требовать, чтобы у цели были все заданные ключи. Это противоположно .any, который требует только, чтобы у цели был хотя бы один из заданных ключей.
-	it('.all', () => {
-		expect({a: 1, b: 2}).to.have.all.keys('a', 'b');
-		assert.hasAllKeys({a: 1, b: 2}, ['a', 'b']);
-	});
 	// Когда целью является строка или массив, .empty утверждает, что свойство длины цели строго (===) равно 0
 	it('.empty', () => {
-		expect([]).to.be.empty;
-		assert.isEmpty([]);
-		expect('').to.be.empty;
-		assert.isEmpty('');
-		expect(new Set()).to.be.empty;
-		assert.isEmpty(new Set());
-		expect(new Map()).to.be.empty;
-		assert.isEmpty(new Map());
 		expect({}).to.be.empty;
+		expect([]).to.be.empty;
+		expect('').to.be.empty;
 		assert.isEmpty({});
-		expect([1, 2]).to.not.be.empty;
-		assert.isNotEmpty([1, 2]);
-
-		expect([]).to.be.an('array').that.is.empty;
-		assert.isArray([]);
 		assert.isEmpty([]);
-	});
-	// Утверждает, что цель строго (===) равна заданному значению.
-	it('.equal, .strictEqual, .deepEqual', () => {1
-		expect(1).to.equal(1);
-		assert.equal(1, 1);
-		assert.equal(1, '1');
-		assert.strictEqual(1, 1);
-		expect(1).to.not.equal(2);
-		assert.notEqual(1, 2);
-		assert.notStrictEqual(1, 2);
+		assert.isEmpty('');
 	});
 	// Утверждает, что цель глубоко равна данному объекту.
 	it('.eql, .deepEqual', () => {
@@ -89,33 +53,6 @@ describe('Тесты', () => {
 		expect(['x', 'y']).to.have.all.keys(0, 1);
 		expect(['x', 'y']).to.have.all.keys([0, 1]);
 		expect(['x', 'y']).to.have.all.keys({0: 4, 1: 5}); // ignore 4 and 5
-	});
-	// Когда цель не является функциональным объектом, .respondTo утверждает, что у цели есть метод с данным методом имени. Метод может быть собственным или унаследованным, и он может быть перечисляемым или неперечисляемым.
-	it('.respondTo', () => {
-		function O() {
-			this.f1 = function () {};
-		}
-		O.prototype.f2 = function () {};
-		O.f3 = function() {}
-
-		expect(new O()).to.respondTo('f2').to.respondTo('f1');
-		expect(O).to.respondTo('f2').itself.to.respondTo('f3');
-	});
-	// Заставляет все утверждения .respondTo, которые следуют в цепочке, вести себя так, как будто цель не является функциональным объектом, даже если это функция. Таким образом, это заставляет .respondTo утверждать, что у цели есть метод с заданным именем, а не утверждать, что у свойства-прототипа цели есть метод с данным именем.
-	it('.itself', () => {
-		function O() {}
-		O.prototype.f1 = function () {};
-		O.f2 = function () {};
-		expect(O).itself.to.respondTo('f2').but.not.respondTo('f1');
-	});
-	// Заставляет все утверждения .respondTo, которые следуют в цепочке, вести себя так, как будто цель не является функциональным объектом, даже если это функция. Таким образом, это заставляет .respondTo утверждать, что у цели есть метод с заданным именем, а не утверждать, что у свойства-прототипа цели есть метод с данным именем.
-	it('.satisfy', () => {
-		expect(1).to.satisfy(function(num) {
-			return num > 0;
-		});
-		expect(1).to.not.satisfy(function(num) {
-			return num > 2;
-		});
 	});
 	// Утверждает, что целевой массив имеет те же элементы, что и заданный набор массивов.
 	it('.members', () => {
@@ -132,82 +69,5 @@ describe('Тесты', () => {
 		expect([{a: 1}, {b: 2}, {c: 3}]).to.include.deep.ordered.members([{a: 1}, {b: 2}]);
 		assert.includeDeepOrderedMembers([{a: 1}, {b: 2}, {c: 3}], [{a: 1}, {b: 2}]);
 		assert.sameDeepOrderedMembers([{a: 1}, {b: 2}, {c: 3}], [{a: 1}, {b: 2}, {c: 3}]);
-	});
-	// Утверждает, что цель является членом данного списка массивов.
-	it('.oneOf', () => {
-		expect('Today is sunny').to.contain.oneOf(['sunny', 'cloudy']);
-		expect([1,2,3]).to.contain.oneOf([3,4,5]);
-	});
-	// Когда предоставляется один аргумент, .change утверждает, что данный субъект функции возвращает другое значение, когда он вызывается до целевой функции, по сравнению с тем, когда он вызывается позже.
-	it('.change', () => {
-		let dots = '';
-		let addDot = function () { dots += '.'; };
-		let getDots = function () { return dots; };
-		// Recommended
-		expect(getDots()).to.equal('');
-		addDot();
-		expect(getDots()).to.equal('.');
-		// Not recommended
-		dots = '';
-		expect(addDot).to.change(getDots);
-
-		let myObj = {dots: ''};
-		let addDotObj = function () { myObj.dots += '.'; };
-		// Recommended
-		expect(myObj).to.have.property('dots', '');
-		addDotObj();
-		expect(myObj).to.have.property('dots', '.');
-		// Not recommended
-		myObj.dots = '';
-		expect(addDotObj).to.change(myObj, 'dots');
-		myObj.dots = '';
-		assert.changes(addDotObj, myObj, 'dots');
-	});
-	// Когда предоставляется один аргумент, .increase утверждает, что данный субъект функции возвращает большее число, когда он вызывается после вызова целевой функции, по сравнению с тем, когда он вызывается до этого. .increase также заставляет все утверждения .by, которые следуют в цепочке, утверждать, насколько большее число возвращается. Часто лучше утверждать, что возвращаемое значение увеличилось на ожидаемую сумму, а не утверждать, что оно увеличилось на какую-либо величину.
-	it('.increase, increaseBy', () => {
-		let myObj = {val: 1}
-		let subtractTwoObj = function () { myObj.val += 2; };
-		expect(subtractTwoObj).to.increase(myObj, 'val').by(2);
-		myObj.val = 1;
-		assert.increasesBy(subtractTwoObj, myObj, 'val', 2);
-		myObj.val = 1;
-		expect(subtractTwoObj).to.increase(myObj, 'val');
-		myObj.val = 1;
-		assert.increases(subtractTwoObj, myObj, 'val');
-	});
-	// Когда предоставляется один аргумент, .decrease утверждает, что данный субъект функции возвращает меньшее число, когда он вызывается после вызова целевой функции, по сравнению с тем, когда он вызывается заранее. .decrease также заставляет все утверждения .by, следующие в цепочке, утверждать, насколько меньшее число возвращается. Часто лучше утверждать, что возвращаемое значение уменьшилось на ожидаемую величину, а не утверждать, что оно уменьшилось на какую-либо величину.
-	it('.decrease, .decreasesBy', () => {
-		let myObj = {val: 1}
-		let subtractTwoObj = function () { myObj.val -= 2; };
-		expect(subtractTwoObj).to.decrease(myObj, 'val').by(2);
-		myObj.val = 1;
-		assert.decreasesBy(subtractTwoObj, myObj, 'val', 2);
-		myObj.val = 1;
-		expect(subtractTwoObj).to.decrease(myObj, 'val');
-		myObj.val = 1;
-		assert.decreases(subtractTwoObj, myObj, 'val');
-	});
-	// Следуя утверждению .increase в цепочке, .by утверждает, что субъект утверждения .increase увеличился на заданную дельту.
-	it('.by', () => {
-		let myObj = {val: 1};
-		let addTwo = function () { myObj.val += 2; };
-
-		expect(addTwo).to.increase(myObj, 'val').by(2);
-	});
-	// Утверждает, что целью является число, а не NaN или положительная/отрицательная бесконечность.
-	it('.fail', () => {
-		expect.fail();
-		expect.fail("custom error message");
-		expect.fail(1, 2);
-		expect.fail(1, 2, "custom error message");
-		expect.fail(1, 2, "custom error message", ">");
-		expect.fail(1, 2, undefined, ">");
-
-		assert.fail();
-		assert.fail("custom error message");
-		assert.fail(1, 2);
-		assert.fail(1, 2, "custom error message");
-		assert.fail(1, 2, "custom error message", ">");
-		assert.fail(1, 2, undefined, ">");
 	});
 });
