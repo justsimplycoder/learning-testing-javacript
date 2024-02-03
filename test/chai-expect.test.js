@@ -232,6 +232,16 @@ describe('Тесты Chai стиль expect', () => {
 			expect({a: 1, b: 2}).to.have.all.keys(['a', 'b']);
 			expect({a: 1, b: 2}).to.have.all.keys({a: 4, b: 5}); // ignore 4 and 5
 		});
+		it('own', () => {
+			function O() {
+				this.a = 1;
+			}
+			O.prototype.b = 2;
+			expect(new O()).to.include({a: 1})
+			expect(new O()).to.include({b: 2})
+			expect(new O()).to.own.include({a: 1})
+			expect(new O()).to.not.own.include({b: 2})
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

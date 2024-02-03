@@ -209,6 +209,16 @@ describe('Тесты Chai стиль assert', () => {
 			assert.hasAllKeys({a: 1, b: 2}, ['a', 'b']);
 			assert.hasAllKeys({a: 1, b: 2}, {a: 4, b: 5}); // ignore 4 and 5
 		});
+		it('own', () => {
+			function O() {
+				this.a = 1;
+			}
+			O.prototype.b = 2;
+			assert.include(new O(), {a: 1});
+			assert.include(new O(), {b: 2});
+			assert.ownInclude(new O(), {a: 1});
+			assert.notOwnInclude(new O(), {b: 2});
+		});
 	});
 	describe('Error', () => {
 		it('throw Error', () => {

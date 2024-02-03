@@ -1124,6 +1124,53 @@ test('keys', () => {
 });
       `
     },
+    {
+      "key": "3:9",
+      "name": "own",
+      "description": "Игнорирование унаследованных свойств.",
+      "expectChai": `
+it('own', () => {
+  function O() {
+    this.a = 1;
+  }
+  O.prototype.b = 2;
+  expect(new O()).to.include({a: 1})
+  expect(new O()).to.include({b: 2})
+  expect(new O()).to.own.include({a: 1})
+  expect(new O()).to.not.own.include({b: 2})
+});
+      `,
+      "assertChai": `
+it('own', () => {
+  function O() {
+    this.a = 1;
+  }
+  O.prototype.b = 2;
+  assert.include(new O(), {a: 1});
+  assert.include(new O(), {b: 2});
+  assert.ownInclude(new O(), {a: 1});
+  assert.notOwnInclude(new O(), {b: 2});
+});
+      `,
+      "jest": `
+test('own', () => {
+  function O() {
+    this.a = 1;
+  }
+  O.prototype.b = 2;
+  expect(new O()).toHaveProperty('a');
+  expect(new O()).toHaveProperty('b');
+  expect(Object.hasOwn(new O(), 'a')).toBe(true);
+  expect(new O()).toEqual(
+    expect.objectContaining({a: 1})
+  );;
+  expect(Object.hasOwn(new O(), 'b')).toBe(false);
+  expect(new O()).toEqual(
+    expect.objectContaining({b: 2})
+  );;
+});
+      `
+    },
   ]
 },
 {

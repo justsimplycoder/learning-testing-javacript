@@ -13,18 +13,6 @@ describe('Тесты', () => {
 		assert.nestedInclude({'.a': {'b': 'x'}}, {'\\.a.b': 'x'});
 		assert.nestedInclude({'a': {'[b]': 'x'}}, {'a.\\[b\\]': 'x'});
 	});
-	// Заставляет все утверждения .property и .include, которые следуют в цепочке, игнорировать унаследованные свойства.
-	it('.own', () => {
-		function O() {
-			this.a = 1;
-		}
-		O.prototype.b = 2;
-		expect(new O()).to.include({a: 1})
-		expect(new O()).to.own.include({a: 1})
-		expect(new O()).to.include({b: 2})
-		expect(new O()).to.not.own.include({b: 2})
-		expect(new O()).to.include({b: 2}).but.not.own.include({b: 2});
-	});
 	// Заставляет все утверждения .members, следующие в цепочке, требовать, чтобы элементы были в одном и том же порядке.
 	it('.ordered', () => {
 		expect([1, 2]).to.have.ordered.members([1, 2])

@@ -228,6 +228,22 @@ describe('Тесты Jest', () => {
 				Object.keys({a: 3, b: 4})
 			));
 		});
+		test('own', () => {
+			function O() {
+				this.a = 1;
+			}
+			O.prototype.b = 2;
+			expect(new O()).toHaveProperty('a');
+			expect(new O()).toHaveProperty('b');
+			expect(Object.hasOwn(new O(), 'a')).toBe(true);
+			expect(new O()).toEqual(
+				expect.objectContaining({a: 1})
+			);;
+			expect(Object.hasOwn(new O(), 'b')).toBe(false);
+			expect(new O()).toEqual(
+				expect.objectContaining({b: 2})
+			);;
+		});
 	});
 	describe('Error', () => {
 		test('throw Error', () => {
