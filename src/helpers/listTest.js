@@ -658,160 +658,11 @@ test('type myCustomType', () => {
 },
 {
   "key": 2,
-  "title": "Разное",
-  "visible": true,
-  "content": [
-    {
-      "key": "2:0",
-      "name": "length",
-      "description": "Длина значения",
-      "expectChai": `
-it('length', () => {
-  expect([1, 2, 3]).to.have.lengthOf(3);
-  expect('text').to.have.lengthOf(4);
-  expect(new Set([1, 2, 3])).to.have.lengthOf(3);
-  expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
-});
-      `,
-      "assertChai": `
-it('length', () => {
-  assert.lengthOf([1, 2, 3], 3);
-  assert.lengthOf('text', 4);
-  assert.lengthOf(new Set([1, 2, 3]), 3);
-  assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
-});
-      `,
-      "jest": `
-test('length', () => {
-  expect([1, 2, 3]).toHaveLength(3);
-  expect('text').toHaveLength(4);
-  // Не будет работать
-  // expect(new Set([1, 2, 3])).toHaveLength(3);
-  // expect(new Map([['a', 1], ['b', 2], ['c', 3]])).toHaveLength(3);
-  expect(new Set([1, 2, 3]).size).toBe(3);
-  expect(new Map([['a', 1], ['b', 2], ['c', 3]]).size).toBe(3);
-});
-      `
-    },
-    {
-      "key": "2:1",
-      "name": "match",
-      "description": "Соответствие регулярному выражению",
-      "expectChai": `
-it('match', () => {
-  expect('foobar').to.match(/^foo/);
-});
-      `,
-      "assertChai": `
-it('match', () => {
-  assert.match('foobar', /^foo/);
-});
-      `,
-      "jest": `
-test('match', () => {
-  expect('foobar').toMatch(/^foo/);
-});
-      `
-    },
-    {
-      "key": "2:2",
-      "name": "string include",
-      "description": "Утверждает что целевая строка содержит подстроку.",
-      "expectChai": `
-it('string include', () => {
-  expect('foobar').to.have.string('bar');
-  expect('foobar').to.include.string('bar');
-});
-      `,
-      "assertChai": `
-it('string include', () => {
-  assert.include('foobar', 'bar');
-});
-      `,
-      "jest": `
-it('string include', () => {
-  expect('foobar').toEqual(expect.stringContaining('bar'));
-  expect('foobar').toContain('bar');
-});
-      `
-    },
-    {
-      "key": "2:3",
-      "name": "array include",
-      "description": "Утверждает что элемент присутствует в массиве.",
-      "expectChai": `
-it('array include', () => {
-  expect([1, 2, 3]).to.include(2);
-  expect(1).to.be.oneOf([1, 2, 3]);
-  expect([1, [2, 3]]).to.deep.include([2, 3]);
-});
-      `,
-      "assertChai": `
-it('array include', () => {
-  assert.include([1, 2, 3], 2);
-  assert.oneOf(1, [1, 2, 3]);
-  assert.deepInclude([1, [2, 3]], [2, 3]);
-});
-      `,
-      "jest": `
-it('array include', () => {
-  expect([1, 2, 3]).toContain(2);
-  expect([1, [2, 3]]).toContainEqual([2, 3]);
-});
-      `
-    },
-    {
-      "key": "2:4",
-      "name": "close to",
-      "description": "Утверждает что число, которое находится в заданном диапазоне +/- дельта от заданного ожидаемого числа.",
-      "expectChai": `
-it('close to', () => {
-  expect(1.5).to.be.closeTo(1, 0.5);
-  expect(1.5).to.be.closeTo(2, 0.5);
-  expect(1.5).to.be.closeTo(1, 1);
-  expect(1.5).to.be.closeTo(1, 3);
-  expect(1.5).to.not.be.closeTo(1, 0.4);
-});
-      `,
-      "assertChai": `
-it('close to', () => {
-  assert.closeTo(1.5, 1, 0.5);
-  assert.closeTo(1.5, 2, 0.5);
-  assert.closeTo(1.5, 1, 1);
-  assert.closeTo(1.5, 1, 3);
-});
-      `,
-      "jest": undefined
-    },
-    {
-      "key": "2:5",
-      "name": "arguments function",
-      "description": "Утверждает, что целью является объект arguments.",
-      "expectChai": `
-it('arguments function', () => {
-  (function () {
-    expect(arguments).to.be.arguments;
-  })();
-});
-      `,
-      "assertChai": `
-it('arguments function', () => {
-  (function () {
-    assert.typeOf(arguments, 'arguments');
-  })();
-});
-      `,
-      "jest": undefined
-    },
-  ]
-},
-{
-  "key": 3,
   "title": "Объекты",
   "visible": true,
   "content": [
     {
-      "key": "3:0",
+      "key": "2:0",
       "name": "new Obj instanceof Obj",
       "description": "Соответствует всему что было создано с помощью указанного конструктора.",
       "expectChai": `
@@ -843,7 +694,7 @@ test('new Obj instanceof Obj', () => {
       `
     },
     {
-      "key": "3:1",
+      "key": "2:1",
       "name": "property Object",
       "description": "Наличие свойства и его значение в объекте.",
       "expectChai": `
@@ -908,7 +759,7 @@ test('property Object', () => {
       `
     },
     {
-      "key": "3:2",
+      "key": "2:2",
       "name": "frozen Object",
       "description": "Объект заморожен.",
       "expectChai": `
@@ -940,7 +791,7 @@ test('frozen Object', () => {
       `
     },
     {
-      "key": "3:3",
+      "key": "2:3",
       "name": "sealed Object",
       "description": "Объект запечатан.",
       "expectChai": `
@@ -969,7 +820,7 @@ test('sealed  Object', () => {
       `
     },
     {
-      "key": "3:4",
+      "key": "2:4",
       "name": "extensible Object",
       "description": "Объект расширяемый.",
       "expectChai": `
@@ -1004,7 +855,7 @@ test('extensible Object', () => {
       `
     },
     {
-      "key": "3:5",
+      "key": "2:5",
       "name": "equal",
       "description": "Утверждает, что данные объектов равны.",
       "expectChai": `
@@ -1037,7 +888,7 @@ test('equal', () => {
       `
     },
     {
-      "key": "3:6",
+      "key": "2:6",
       "name": "object include",
       "description": "Утверждает что элемент присутствует в объекте.",
       "expectChai": `
@@ -1064,7 +915,7 @@ it('object include', () => {
       `
     },
     {
-      "key": "3:7",
+      "key": "2:7",
       "name": "getOwnPropertyDescriptors",
       "description": "Утверждает, что цель имеет собственный дескриптор свойства с заданным именем ключа.",
       "expectChai": `
@@ -1092,7 +943,7 @@ test('getOwnPropertyDescriptors', () => {
       `
     },
     {
-      "key": "3:8",
+      "key": "2:8",
       "name": "keys",
       "description": "Утверждает, что целевой объект имеет заданные ключи.",
       "expectChai": `
@@ -1125,7 +976,7 @@ test('keys', () => {
       `
     },
     {
-      "key": "3:9",
+      "key": "2:9",
       "name": "own",
       "description": "Игнорирование унаследованных свойств.",
       "expectChai": `
@@ -1174,12 +1025,161 @@ test('own', () => {
   ]
 },
 {
+  "key": 3,
+  "title": "Массивы",
+  "visible": true,
+  "content": [
+    {
+      "key": "3:0",
+      "name": "array include",
+      "description": "Утверждает что элемент присутствует в массиве.",
+      "expectChai": `
+it('array include', () => {
+  expect([1, 2, 3]).to.include(2);
+  expect(1).to.be.oneOf([1, 2, 3]);
+  expect([1, [2, 3]]).to.deep.include([2, 3]);
+});
+      `,
+      "assertChai": `
+it('array include', () => {
+  assert.include([1, 2, 3], 2);
+  assert.oneOf(1, [1, 2, 3]);
+  assert.deepInclude([1, [2, 3]], [2, 3]);
+});
+      `,
+      "jest": `
+it('array include', () => {
+  expect([1, 2, 3]).toContain(2);
+  expect([1, [2, 3]]).toContainEqual([2, 3]);
+});
+      `
+    },
+  ]
+},
+{
   "key": 4,
-  "title": "Error",
+  "title": "Разное",
   "visible": true,
   "content": [
     {
       "key": "4:0",
+      "name": "length",
+      "description": "Длина значения",
+      "expectChai": `
+it('length', () => {
+  expect([1, 2, 3]).to.have.lengthOf(3);
+  expect('text').to.have.lengthOf(4);
+  expect(new Set([1, 2, 3])).to.have.lengthOf(3);
+  expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
+});
+      `,
+      "assertChai": `
+it('length', () => {
+  assert.lengthOf([1, 2, 3], 3);
+  assert.lengthOf('text', 4);
+  assert.lengthOf(new Set([1, 2, 3]), 3);
+  assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
+});
+      `,
+      "jest": `
+test('length', () => {
+  expect([1, 2, 3]).toHaveLength(3);
+  expect('text').toHaveLength(4);
+  // Не будет работать
+  // expect(new Set([1, 2, 3])).toHaveLength(3);
+  // expect(new Map([['a', 1], ['b', 2], ['c', 3]])).toHaveLength(3);
+  expect(new Set([1, 2, 3]).size).toBe(3);
+  expect(new Map([['a', 1], ['b', 2], ['c', 3]]).size).toBe(3);
+});
+      `
+    },
+    {
+      "key": "4:1",
+      "name": "match",
+      "description": "Соответствие регулярному выражению",
+      "expectChai": `
+it('match', () => {
+  expect('foobar').to.match(/^foo/);
+});
+      `,
+      "assertChai": `
+it('match', () => {
+  assert.match('foobar', /^foo/);
+});
+      `,
+      "jest": `
+test('match', () => {
+  expect('foobar').toMatch(/^foo/);
+});
+      `
+    },
+    {
+      "key": "4:2",
+      "name": "string include",
+      "description": "Утверждает что целевая строка содержит подстроку.",
+      "expectChai": `
+it('string include', () => {
+  expect('foobar').to.have.string('bar');
+  expect('foobar').to.include.string('bar');
+});
+      `,
+      "assertChai": `
+it('string include', () => {
+  assert.include('foobar', 'bar');
+});
+      `,
+      "jest": `
+it('string include', () => {
+  expect('foobar').toEqual(expect.stringContaining('bar'));
+  expect('foobar').toContain('bar');
+});
+      `
+    },
+    {
+      "key": "4:3",
+      "name": "close to",
+      "description": "Утверждает что число, которое находится в заданном диапазоне +/- дельта от заданного ожидаемого числа.",
+      "expectChai": `
+it('close to', () => {
+  expect(1.5).to.be.closeTo(1, 0.5);
+  expect(1.5).to.be.closeTo(2, 0.5);
+  expect(1.5).to.be.closeTo(1, 1);
+  expect(1.5).to.be.closeTo(1, 3);
+  expect(1.5).to.not.be.closeTo(1, 0.4);
+});
+      `,
+      "assertChai": `
+it('close to', () => {
+  assert.closeTo(1.5, 1, 0.5);
+  assert.closeTo(1.5, 2, 0.5);
+  assert.closeTo(1.5, 1, 1);
+  assert.closeTo(1.5, 1, 3);
+});
+      `,
+      "jest": undefined
+    },
+    {
+      "key": "4:4",
+      "name": "arguments function",
+      "description": "Утверждает, что целью является объект arguments.",
+      "expectChai": `
+it('arguments function', () => {
+  (function () {
+    expect(arguments).to.be.arguments;
+  })();
+});
+      `,
+      "assertChai": `
+it('arguments function', () => {
+  (function () {
+    assert.typeOf(arguments, 'arguments');
+  })();
+});
+      `,
+      "jest": undefined
+    },
+    {
+      "key": "4:5",
       "name": "throw Error",
       "description": "Проверка на то что функция бросает исключение.",
       "expectChai": `
