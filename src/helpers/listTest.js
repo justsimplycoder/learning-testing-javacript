@@ -1054,6 +1054,35 @@ it('array include', () => {
 });
       `
     },
+    {
+      "key": "3:1",
+      "name": "keys array",
+      "description": "Утверждает, что целевой массив имеет заданные ключи.",
+      "expectChai": `
+it('keys', () => {
+  expect(['x', 'y']).to.have.any.keys(1);
+  expect(['x', 'y']).to.have.all.keys(0, 1);
+  expect(['x', 'y']).to.have.all.keys([0, 1]);
+  expect(['x', 'y']).to.have.all.keys({0: 4, 1: 5}); // ignore 4 and 5
+});
+      `,
+      "assertChai": `
+it('keys', () => {
+  assert.hasAnyKeys(['x', 'y'], [1]);
+  assert.hasAllKeys(['x', 'y'], [0, 1]);
+  assert.hasAllKeys(['x', 'y'], {0: 4, 1: 5}); // ignore 4 and 5
+});
+      `,
+      "jest": `
+test('keys', () => {
+  expect(['x', 'y'][1]).toBeDefined();
+  expect(Object.keys(['x', 'y']).map(i => parseInt(i))).toEqual(expect.arrayContaining([0, 1]));
+  expect(Object.keys(['x', 'y'])).toEqual(expect.arrayContaining(
+    Object.keys({0: 4, 1: 5})
+  ));
+});
+      `
+    },
   ]
 },
 {

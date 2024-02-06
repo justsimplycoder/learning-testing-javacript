@@ -196,6 +196,11 @@ describe('Тесты Chai стиль assert', () => {
 			assert.oneOf(1, [1, 2, 3]);
 			assert.deepInclude([1, [2, 3]], [2, 3]);
 		});
+		it('keys', () => {
+			assert.hasAnyKeys(['x', 'y'], [1]);
+			assert.hasAllKeys(['x', 'y'], [0, 1]);
+			assert.hasAllKeys(['x', 'y'], {0: 4, 1: 5}); // ignore 4 and 5
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {

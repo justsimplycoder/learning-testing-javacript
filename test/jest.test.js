@@ -228,6 +228,13 @@ describe('Тесты Jest', () => {
 			expect([1, 2, 3]).toContain(2);
 			expect([1, [2, 3]]).toContainEqual([2, 3]);
 		});
+		test('keys', () => {
+			expect(['x', 'y'][1]).toBeDefined();
+			expect(Object.keys(['x', 'y']).map(i => parseInt(i))).toEqual(expect.arrayContaining([0, 1]));
+			expect(Object.keys(['x', 'y'])).toEqual(expect.arrayContaining(
+				Object.keys({0: 4, 1: 5})
+			));
+		});
 	});
 	describe('Разное', () => {
 		test('length', () => {

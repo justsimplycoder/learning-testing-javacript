@@ -17,12 +17,6 @@ describe('Тесты', () => {
 		assert.deepEqual([1, 2], [1, 2]);
 		assert.notDeepEqual({ tea: 'green' }, { tea: 'jasmine' })
 	});
-	// Утверждает, что целевой объект, массив, карта или набор имеют заданные ключи. В поиск включаются только собственные унаследованные свойства цели.
-	it('.keys', () => {
-		expect(['x', 'y']).to.have.all.keys(0, 1);
-		expect(['x', 'y']).to.have.all.keys([0, 1]);
-		expect(['x', 'y']).to.have.all.keys({0: 4, 1: 5}); // ignore 4 and 5
-	});
 	// Утверждает, что целевой массив имеет те же элементы, что и заданный набор массивов.
 	it('.members', () => {
 		expect([{a: 1}]).to.have.deep.members([{a: 1}]);
