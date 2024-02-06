@@ -119,28 +119,6 @@ describe('Тесты Jest', () => {
 			expect(Object.prototype.toString.call(myObj)).toBe('[object myCustomType]');
 		});
 	});
-	describe('Разное', () => {
-		test('length', () => {
-			expect([1, 2, 3]).toHaveLength(3);
-			expect('text').toHaveLength(4);
-			// Не будет работать
-			// expect(new Set([1, 2, 3])).toHaveLength(3);
-			// expect(new Map([['a', 1], ['b', 2], ['c', 3]])).toHaveLength(3);
-			expect(new Set([1, 2, 3]).size).toBe(3);
-			expect(new Map([['a', 1], ['b', 2], ['c', 3]]).size).toBe(3);
-		});
-		test('match', () => {
-			expect('foobar').toMatch(/^foo/);
-		});
-		it('string include', () => {
-			expect('foobar').toEqual(expect.stringContaining('bar'));
-			expect('foobar').toContain('bar');
-		});
-		it('array include', () => {
-			expect([1, 2, 3]).toContain(2);
-			expect([1, [2, 3]]).toContainEqual([2, 3]);
-		});
-	});
 	describe('Объекты', () => {
 		test('new Obj instanceof Obj', () => {
 			function Cat () { }
@@ -245,7 +223,29 @@ describe('Тесты Jest', () => {
 			);;
 		});
 	});
-	describe('Error', () => {
+	describe('Массивы', () => {
+		test('array include', () => {
+			expect([1, 2, 3]).toContain(2);
+			expect([1, [2, 3]]).toContainEqual([2, 3]);
+		});
+	});
+	describe('Разное', () => {
+		test('length', () => {
+			expect([1, 2, 3]).toHaveLength(3);
+			expect('text').toHaveLength(4);
+			// Не будет работать
+			// expect(new Set([1, 2, 3])).toHaveLength(3);
+			// expect(new Map([['a', 1], ['b', 2], ['c', 3]])).toHaveLength(3);
+			expect(new Set([1, 2, 3]).size).toBe(3);
+			expect(new Map([['a', 1], ['b', 2], ['c', 3]]).size).toBe(3);
+		});
+		test('match', () => {
+			expect('foobar').toMatch(/^foo/);
+		});
+		test('string include', () => {
+			expect('foobar').toEqual(expect.stringContaining('bar'));
+			expect('foobar').toContain('bar');
+		});
 		test('throw Error', () => {
 			expect(() => {
 				throw new Error('Ошибка');

@@ -125,38 +125,6 @@ describe('Тесты Chai стиль expect', () => {
 			expect(myObj).to.be.a('myCustomType');
 		});
 	});
-	describe('Разное', () => {
-		it('length', () => {
-			expect([1, 2, 3]).to.have.lengthOf(3);
-			expect('text').to.have.lengthOf(4);
-			expect(new Set([1, 2, 3])).to.have.lengthOf(3);
-			expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
-		});
-		it('match', () => {
-			expect('foobar').to.match(/^foo/);
-		});
-		it('string include', () => {
-			expect('foobar').to.have.string('bar');
-			expect('foobar').to.include.string('bar');
-		});
-		it('array include', () => {
-			expect([1, 2, 3]).to.include(2);
-			expect(1).to.be.oneOf([1, 2, 3]);
-			expect([1, [2, 3]]).to.deep.include([2, 3]);
-		});
-		it('close to', () => {
-			expect(1.5).to.be.closeTo(1, 0.5);
-			expect(1.5).to.be.closeTo(2, 0.5);
-			expect(1.5).to.be.closeTo(1, 1);
-			expect(1.5).to.be.closeTo(1, 3);
-			expect(1.5).to.not.be.closeTo(1, 0.4);
-		});
-		it('arguments function', () => {
-			(function () {
-				expect(arguments).to.be.arguments;
-			})();
-		});
-	});
 	describe('Объекты', () => {
 		it('new Obj instanceof Obj', () => {
 			function Cat () { }
@@ -243,7 +211,39 @@ describe('Тесты Chai стиль expect', () => {
 			expect(new O()).to.not.own.include({b: 2})
 		});
 	});
-	describe('Error', () => {
+	describe('Массивы', () => {
+		it('array include', () => {
+			expect([1, 2, 3]).to.include(2);
+			expect(1).to.be.oneOf([1, 2, 3]);
+			expect([1, [2, 3]]).to.deep.include([2, 3]);
+		});
+	});
+	describe('Разное', () => {
+		it('length', () => {
+			expect([1, 2, 3]).to.have.lengthOf(3);
+			expect('text').to.have.lengthOf(4);
+			expect(new Set([1, 2, 3])).to.have.lengthOf(3);
+			expect(new Map([['a', 1], ['b', 2], ['c', 3]])).to.have.lengthOf(3);
+		});
+		it('match', () => {
+			expect('foobar').to.match(/^foo/);
+		});
+		it('string include', () => {
+			expect('foobar').to.have.string('bar');
+			expect('foobar').to.include.string('bar');
+		});
+		it('close to', () => {
+			expect(1.5).to.be.closeTo(1, 0.5);
+			expect(1.5).to.be.closeTo(2, 0.5);
+			expect(1.5).to.be.closeTo(1, 1);
+			expect(1.5).to.be.closeTo(1, 3);
+			expect(1.5).to.not.be.closeTo(1, 0.4);
+		});
+		it('arguments function', () => {
+			(function () {
+				expect(arguments).to.be.arguments;
+			})();
+		});
 		it('throw Error', () => {
 			expect(() => {
 				throw new Error('Ошибка');

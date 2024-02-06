@@ -117,36 +117,6 @@ describe('Тесты Chai стиль assert', () => {
 			assert.typeOf(myObj, 'myCustomType');
 		});
 	});
-	describe('Разное', () => {
-		it('length', () => {
-			assert.lengthOf([1, 2, 3], 3);
-			assert.lengthOf('text', 4);
-			assert.lengthOf(new Set([1, 2, 3]), 3);
-			assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
-		});
-		it('match', () => {
-			assert.match('foobar', /^foo/);
-		});
-		it('string include', () => {
-			assert.include('foobar', 'bar');
-		});
-		it('array include', () => {
-			assert.include([1, 2, 3], 2);
-			assert.oneOf(1, [1, 2, 3]);
-			assert.deepInclude([1, [2, 3]], [2, 3]);
-		});
-		it('close to', () => {
-			assert.closeTo(1.5, 1, 0.5);
-			assert.closeTo(1.5, 2, 0.5);
-			assert.closeTo(1.5, 1, 1);
-			assert.closeTo(1.5, 1, 3);
-		});
-		it('arguments function', () => {
-			(function () {
-				assert.typeOf(arguments, 'arguments');
-			})();
-		});
-	});
 	describe('Объекты', () => {
 		it('new Obj instanceof Obj', () => {
 			function Cat () { }
@@ -220,7 +190,37 @@ describe('Тесты Chai стиль assert', () => {
 			assert.notOwnInclude(new O(), {b: 2});
 		});
 	});
-	describe('Error', () => {
+	describe('Массивы', () => {
+		it('array include', () => {
+			assert.include([1, 2, 3], 2);
+			assert.oneOf(1, [1, 2, 3]);
+			assert.deepInclude([1, [2, 3]], [2, 3]);
+		});
+	});
+	describe('Разное', () => {
+		it('length', () => {
+			assert.lengthOf([1, 2, 3], 3);
+			assert.lengthOf('text', 4);
+			assert.lengthOf(new Set([1, 2, 3]), 3);
+			assert.lengthOf(new Map([['a', 1], ['b', 2], ['c', 3]]), 3);
+		});
+		it('match', () => {
+			assert.match('foobar', /^foo/);
+		});
+		it('string include', () => {
+			assert.include('foobar', 'bar');
+		});
+		it('close to', () => {
+			assert.closeTo(1.5, 1, 0.5);
+			assert.closeTo(1.5, 2, 0.5);
+			assert.closeTo(1.5, 1, 1);
+			assert.closeTo(1.5, 1, 3);
+		});
+		it('arguments function', () => {
+			(function () {
+				assert.typeOf(arguments, 'arguments');
+			})();
+		});
 		it('throw Error', () => {
 			assert.throws(() => {
 				throw new Error('Ошибка');
