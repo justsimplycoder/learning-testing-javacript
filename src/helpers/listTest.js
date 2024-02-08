@@ -1108,6 +1108,34 @@ test('equal array', () => {
 });
       `
     },
+    {
+      "key": "3:3",
+      "name": "order element",
+      "description": "Утверждает, что данные массивы равны и элементы идут в одном и том же порядке.",
+      "expectChai": `
+it('order element', () => {
+  expect([1, 2]).to.have.ordered.members([1, 2]);
+  expect([{a: 1}, {b: 2}, {c: 3}]).to.have.deep.ordered.members([{a: 1}, {b: 2}, {c: 3}]);
+});
+      `,
+      "assertChai": `
+it('order element', () => {
+  assert.sameOrderedMembers([ 1, 2 ], [ 1, 2 ]);
+  assert.sameDeepOrderedMembers([{a: 1}, {b: 2}, {c: 3}], [{a: 1}, {b: 2}, {c: 3}]);
+});
+      `,
+      "jest": `
+test('order element', () => {
+  expect([1, 2]).toEqual([1, 2]);
+  // Для игнорирования положения элемента можно применить сортировку
+  // expect([1, 2].sort()).toEqual([1, 2].sort());
+  // или
+  // expect([1, 2]).toEqual(expect.arrayContaining([2, 1]));
+  // expect([1, 2].length).toBe([2, 1].length);
+  expect([{a: 1}, {b: 2}, {c: 3}]).toEqual([{a: 1}, {b: 2}, {c: 3}]);
+});
+      `
+    },
   ]
 },
 {

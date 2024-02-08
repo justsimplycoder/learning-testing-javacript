@@ -205,6 +205,10 @@ describe('Тесты Chai стиль assert', () => {
 			assert.deepEqual([1, 2], [1, 2]);
 			assert.deepEqual([{x: 1, y: 3}, {x: 2, y: 4}], [{x: 1, y: 3}, {x: 2, y: 4}]);
 		});
+		it('order element', () => {
+			assert.sameOrderedMembers([ 1, 2 ], [ 1, 2 ]);
+			assert.sameDeepOrderedMembers([{a: 1}, {b: 2}, {c: 3}], [{a: 1}, {b: 2}, {c: 3}]);
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {

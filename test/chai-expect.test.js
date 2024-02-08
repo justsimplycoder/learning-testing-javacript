@@ -229,6 +229,10 @@ describe('Тесты Chai стиль expect', () => {
 			expect([{x: 1, y: 3}, {x: 2, y: 4}]).to.deep.equal([{x: 1, y: 3}, {x: 2, y: 4}]);
 			expect([{x: 1, y: 3}, {x: 2, y: 4}]).to.eql([{x: 1, y: 3}, {x: 2, y: 4}]);
 		});
+		it('order element', () => {
+			expect([1, 2]).to.have.ordered.members([1, 2]);
+			expect([{a: 1}, {b: 2}, {c: 3}]).to.have.deep.ordered.members([{a: 1}, {b: 2}, {c: 3}]);
+		});
 	});
 	describe('Разное', () => {
 		it('length', () => {

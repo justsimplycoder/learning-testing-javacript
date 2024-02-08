@@ -239,6 +239,15 @@ describe('Тесты Jest', () => {
 			expect([1, 2]).toEqual([1, 2]);
 			expect([{x: 1, y: 3}, {x: 2, y: 4}]).toEqual([{x: 1, y: 3}, {x: 2, y: 4}]);
 		});
+		test('order element', () => {
+			expect([1, 2]).toEqual([1, 2]);
+			// Для игнорирования положения элемента можно применить сортировку
+			// expect([1, 2].sort()).toEqual([1, 2].sort());
+			// или
+			// expect([1, 2]).toEqual(expect.arrayContaining([2, 1]));
+			// expect([1, 2].length).toBe([2, 1].length);
+			expect([{a: 1}, {b: 2}, {c: 3}]).toEqual([{a: 1}, {b: 2}, {c: 3}]);
+		});
 	});
 	describe('Разное', () => {
 		test('length', () => {
