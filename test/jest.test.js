@@ -235,6 +235,10 @@ describe('Тесты Jest', () => {
 				Object.keys({0: 4, 1: 5})
 			));
 		});
+		test('equal array', () => {
+			expect([1, 2]).toEqual([1, 2]);
+			expect([{x: 1, y: 3}, {x: 2, y: 4}]).toEqual([{x: 1, y: 3}, {x: 2, y: 4}]);
+		});
 	});
 	describe('Разное', () => {
 		test('length', () => {

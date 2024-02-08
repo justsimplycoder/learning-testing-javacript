@@ -1083,6 +1083,31 @@ test('keys', () => {
 });
       `
     },
+    {
+      "key": "3:2",
+      "name": "equal array",
+      "description": "Утверждает, что данные массивы равны.",
+      "expectChai": `
+it('equal array', () => {
+  expect([1, 2]).to.deep.equal([1, 2]);
+  expect([1, 2]).to.eql([1, 2]);
+  expect([{x: 1, y: 3}, {x: 2, y: 4}]).to.deep.equal([{x: 1, y: 3}, {x: 2, y: 4}]);
+  expect([{x: 1, y: 3}, {x: 2, y: 4}]).to.eql([{x: 1, y: 3}, {x: 2, y: 4}]);
+});
+      `,
+      "assertChai": `
+it('equal array', () => {
+  assert.deepEqual([1, 2], [1, 2]);
+  assert.deepEqual([{x: 1, y: 3}, {x: 2, y: 4}], [{x: 1, y: 3}, {x: 2, y: 4}]);
+});
+      `,
+      "jest": `
+test('equal array', () => {
+  expect([1, 2]).toEqual([1, 2]);
+  expect([{x: 1, y: 3}, {x: 2, y: 4}]).toEqual([{x: 1, y: 3}, {x: 2, y: 4}]);
+});
+      `
+    },
   ]
 },
 {

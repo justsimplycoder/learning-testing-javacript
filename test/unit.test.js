@@ -10,13 +10,6 @@ describe('Тесты', () => {
 		expect([1, 2, 3]).to.include.ordered.members([1, 2])
 			.but.not.include.ordered.members([2, 3]);
 	});
-	// Утверждает, что цель глубоко равна данному объекту.
-	it('.eql, .deepEqual', () => {
-		expect([1, 2]).to.deep.equal([1, 2]);
-		expect([1, 2]).to.eql([1, 2]);
-		assert.deepEqual([1, 2], [1, 2]);
-		assert.notDeepEqual({ tea: 'green' }, { tea: 'jasmine' })
-	});
 	// Утверждает, что целевой массив имеет те же элементы, что и заданный набор массивов.
 	it('.members', () => {
 		expect([{a: 1}]).to.have.deep.members([{a: 1}]);
